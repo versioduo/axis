@@ -1,4 +1,4 @@
-// © Kay Sievers <kay@versioduo.com>, 2020-2022
+// © Kay Sievers <kay@versioduo.com>, 2020-2024
 // SPDX-License-Identifier: Apache-2.0
 
 #include <V2BHY1.h>
@@ -10,7 +10,7 @@
 #include <V2MIDI.h>
 #include <Wire.h>
 
-V2DEVICE_METADATA("com.versioduo.axis", 3, "versioduo:samd:axis");
+V2DEVICE_METADATA("com.versioduo.axis", 4, "versioduo:samd:axis");
 
 static V2LED::WS2812 LED(2, PIN_LED_WS2812, &sercom2, SPI_PAD_0_SCK_1, PIO_SERCOM);
 
@@ -320,7 +320,7 @@ private:
   }
 
   void exportSystem(JsonObject json) override {
-    JsonObject jsonPower  = json.createNestedObject("sensor");
+    JsonObject jsonPower  = json["sensor"].to<JsonObject>();
     jsonPower["product"]  = Sensor.getProductID();
     jsonPower["revision"] = Sensor.getRevisionID();
     jsonPower["software"] = Sensor.getRAMVersion();
@@ -328,7 +328,7 @@ private:
 
   void exportSettings(JsonArray json) override {
     {
-      JsonObject setting = json.createNestedObject();
+      JsonObject setting = json.add<JsonObject>();
       setting["type"]    = "number";
       setting["title"]   = "MIDI";
       setting["label"]   = "Channel";
@@ -338,7 +338,7 @@ private:
       setting["path"]    = "midi/channel";
     }
     {
-      JsonObject setting = json.createNestedObject();
+      JsonObject setting = json.add<JsonObject>();
       setting["type"]    = "toggle";
       setting["title"]   = "Sensor";
       setting["label"]   = "Mode";
@@ -346,7 +346,7 @@ private:
       setting["path"]    = "compass";
     }
     {
-      JsonObject setting = json.createNestedObject();
+      JsonObject setting = json.add<JsonObject>();
       setting["type"]    = "toggle";
       setting["ruler"]   = true;
       setting["text"]    = "Euler";
@@ -354,21 +354,21 @@ private:
       setting["path"]    = "euler/enabled";
     }
     {
-      JsonObject setting = json.createNestedObject();
+      JsonObject setting = json.add<JsonObject>();
       setting["type"]    = "controller";
       setting["label"]   = "Yaw";
       setting["path"]    = "euler/yaw";
       setting["default"] = ConfigurationDefault.euler.yaw;
     }
     {
-      JsonObject setting = json.createNestedObject();
+      JsonObject setting = json.add<JsonObject>();
       setting["type"]    = "controller";
       setting["label"]   = "Pitch";
       setting["path"]    = "euler/pitch";
       setting["default"] = ConfigurationDefault.euler.pitch;
     }
     {
-      JsonObject setting = json.createNestedObject();
+      JsonObject setting = json.add<JsonObject>();
       setting["type"]    = "controller";
       setting["label"]   = "Roll";
       setting["path"]    = "euler/roll";
@@ -419,21 +419,21 @@ private:
 
   void exportConfiguration(JsonObject json) override {
     json["#midi"]        = "The MIDI settings";
-    JsonObject jsonMidi  = json.createNestedObject("midi");
+    JsonObject jsonMidi  = json["midi"].to<JsonObject>();
     jsonMidi["#channel"] = "The channel to send notes and control values to";
     jsonMidi["channel"]  = config.channel + 1;
 
     json["#compass"] = "Use the compass for absolute coordinates";
     json["compass"]  = config.compass;
 
-    JsonObject jsonCalibration = json.createNestedObject("calibration");
+    JsonObject jsonCalibration = json["calibration"].to<JsonObject>();
     jsonCalibration["#"]       = "The rotation of the sensor to the device's zero position";
     jsonCalibration["w"]       = serialized(String(config.calibration.w, 4));
     jsonCalibration["x"]       = serialized(String(config.calibration.x, 4));
     jsonCalibration["y"]       = serialized(String(config.calibration.y, 4));
     jsonCalibration["z"]       = serialized(String(config.calibration.z, 4));
 
-    JsonObject jsonEuler = json.createNestedObject("euler");
+    JsonObject jsonEuler = json["euler"].to<JsonObject>();
     jsonEuler["#"]       = "The controller numbers for Euler coordinates";
     jsonEuler["enabled"] = config.euler.enabled;
     jsonEuler["yaw"]     = config.euler.yaw;
@@ -442,21 +442,21 @@ private:
   }
 
   void exportInput(JsonObject json) override {
-    JsonArray jsonControllers = json.createNestedArray("controllers");
+    JsonArray jsonControllers = json["controllers"].to<JsonArray>();
     {
-      JsonObject jsonController = jsonControllers.createNestedObject();
+      JsonObject jsonController = jsonControllers.add<JsonObject>();
       jsonController["name"]    = "Home";
       jsonController["type"]    = "momentary";
       jsonController["number"]  = (uint8_t)CC::Home;
     }
     {
-      JsonObject jsonController = jsonControllers.createNestedObject();
+      JsonObject jsonController = jsonControllers.add<JsonObject>();
       jsonController["name"]    = "Save";
       jsonController["type"]    = "momentary";
       jsonController["number"]  = (uint8_t)CC::SaveConfiguration;
     }
     {
-      JsonObject jsonController = jsonControllers.createNestedObject();
+      JsonObject jsonController = jsonControllers.add<JsonObject>();
       jsonController["name"]    = "Brightness";
       jsonController["number"]  = (uint8_t)CC::Light;
       jsonController["value"]   = (uint8_t)(_lightMax * 127.f);
@@ -466,30 +466,30 @@ private:
   void exportOutput(JsonObject json) override {
     json["channel"] = config.channel;
 
-    JsonArray jsonControllers = json.createNestedArray("controllers");
+    JsonArray jsonControllers = json["controllers"].to<JsonArray>();
     {
-      JsonObject jsonController   = jsonControllers.createNestedObject();
+      JsonObject jsonController   = jsonControllers.add<JsonObject>();
       jsonController["name"]      = "Quaternion W";
       jsonController["number"]    = (uint8_t)CC::Quaternion + 0;
       jsonController["value"]     = _hires.getMSB((uint8_t)CC::Quaternion + 0);
       jsonController["valueFine"] = _hires.getLSB((uint8_t)CC::Quaternion + 0);
     }
     {
-      JsonObject jsonController   = jsonControllers.createNestedObject();
+      JsonObject jsonController   = jsonControllers.add<JsonObject>();
       jsonController["name"]      = "Quaternion X";
       jsonController["number"]    = (uint8_t)CC::Quaternion + 1;
       jsonController["value"]     = _hires.getMSB((uint8_t)CC::Quaternion + 1);
       jsonController["valueFine"] = _hires.getLSB((uint8_t)CC::Quaternion + 1);
     }
     {
-      JsonObject jsonController   = jsonControllers.createNestedObject();
+      JsonObject jsonController   = jsonControllers.add<JsonObject>();
       jsonController["name"]      = "Quaternion Y";
       jsonController["number"]    = (uint8_t)CC::Quaternion + 2;
       jsonController["value"]     = _hires.getMSB((uint8_t)CC::Quaternion + 2);
       jsonController["valueFine"] = _hires.getLSB((uint8_t)CC::Quaternion + 2);
     }
     {
-      JsonObject jsonController   = jsonControllers.createNestedObject();
+      JsonObject jsonController   = jsonControllers.add<JsonObject>();
       jsonController["name"]      = "Quaternion Z";
       jsonController["number"]    = (uint8_t)CC::Quaternion + 3;
       jsonController["value"]     = _hires.getMSB((uint8_t)CC::Quaternion + 3);
@@ -498,19 +498,19 @@ private:
 
     if (config.euler.enabled) {
       {
-        JsonObject jsonController = jsonControllers.createNestedObject();
+        JsonObject jsonController = jsonControllers.add<JsonObject>();
         jsonController["name"]    = "Euler Yaw";
         jsonController["number"]  = config.euler.yaw;
         jsonController["value"]   = _euler.yaw;
       }
       {
-        JsonObject jsonController = jsonControllers.createNestedObject();
+        JsonObject jsonController = jsonControllers.add<JsonObject>();
         jsonController["name"]    = "Euler Pitch";
         jsonController["number"]  = config.euler.pitch;
         jsonController["value"]   = _euler.pitch;
       }
       {
-        JsonObject jsonController = jsonControllers.createNestedObject();
+        JsonObject jsonController = jsonControllers.add<JsonObject>();
         jsonController["name"]    = "Euler Roll";
         jsonController["number"]  = config.euler.roll;
         jsonController["value"]   = _euler.roll;
