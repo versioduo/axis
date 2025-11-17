@@ -1,6 +1,3 @@
-// © Kay Sievers <kay@versioduo.com>, 2020-2024
-// SPDX-License-Identifier: Apache-2.0
-
 #include <V2BHY1.h>
 #include <V2Buttons.h>
 #include <V2Color.h>
@@ -10,29 +7,31 @@
 #include <V2MIDI.h>
 #include <Wire.h>
 
-V2DEVICE_METADATA("com.versioduo.axis", 4, "versioduo:samd:axis");
+V2DEVICE_METADATA("com.versioduo.axis", 5, "versioduo:samd:axis");
 
 static V2LED::WS2812 LED(2, PIN_LED_WS2812, &sercom2, SPI_PAD_0_SCK_1, PIO_SERCOM);
 
 static class Sensor : public V2BHY1 {
 public:
-  bool compass{};
-
-  Sensor() : V2BHY1(&Wire, PIN_SENSOR_INTERRUPT){};
+  Sensor() : V2BHY1(&Wire, PIN_SENSOR_INTERRUPT) {}
 
   // Subtract the recorded home postion to return the relative orientation to it.
-  V23D::Quaternion getRotation() {
-    return _setup.home * readDevice();
+  auto getRotation() -> V23D::Quaternion {
+    return _setup.home * readCalibrated();
   }
 
-  void setLED() {
+  auto getAcceleration() -> V23D::Vector3 {
+    return getGyroscope();
+  }
+
+  void updateLED() {
     switch (_setup.state) {
       case State::Init:
-        LED.setHSV(V2Color::Green, 0.9, 0.2);
+        LED.setHSV(V2Color::Cyan, 0.9, 0.2);
         break;
 
       case State::Up:
-        LED.setHSV(V2Color::Cyan, 0.9, 0.6);
+        LED.setHSV(V2Color::Green, 0.9, 0.6);
         break;
 
       case State::Calibrated:
@@ -41,46 +40,73 @@ public:
     }
   }
 
-  // Record the gravity vector when the tip of the device points up / to the
-  // sky. It is not required to point to the exact up / z axis, an angle smaller
-  // or larger than 90 degrees from the zero / forward positon leads to the
-  // same result. Only the rotation axis between the tip and zero matters.
-  void setTip() {
-    _setup.up    = getGravity().normalize();
-    _setup.state = State::Up;
-    setLED();
+  // The device points upwards. It is not required to point to the exact Z axis, an
+  // angle smaller or larger than 90 degrees from the zero / Forward positon leads
+  // to the same result. Only the rotation axis between the Tip and Forward matters.
+  auto tip() {
+    _setup = {
+      .state = State::Up,
+      .up    = getGravity().normalize(),
+    };
+    updateLED();
+  }
+  // The device points forward, the zero position. The rotation axis from Up
+  // to Forward defines the Y (Pitch) axis of the device, the gravity defines
+  // the Z (Yaw) axis. The button is pressed once again, the LED of the
+  // now calibrated device turns orange.
+  auto forward() -> bool {
+    auto zAxis{getGravity().normalize()};
+
+    // Require a defined / significant movement / angle to prevent wrong
+    // calibration values.
+    if (auto angle{V23D::radToDeg(_setup.up.angleBetween(zAxis))}; angle < 45.f || angle > 135.f) {
+      _setup.state = State::Init;
+      LED.splashHSV(0.3, V2Color::Red, 1, 0.6);
+      updateLED();
+      return false;
+    }
+
+    auto yAxis{_setup.up.cross(zAxis).normalize()};
+
+    // Calculate the calibration / rotation quaternion to move the sensor's frame
+    // into the device's frame.
+    _setup.calibration = V23D::Attitude::accelerometerMagnetometer(zAxis, yAxis);
+    _setup.state       = State::Calibrated;
+
+    updateLED();
+    return true;
   }
 
   // Record the current orientation. It will be substracted from future measurements
   // to use this as home / zero / start position.
-  void setHome() {
-    if (_setup.state == State::Up && !setForward())
-      LED.splashHSV(0.3, V2Color::Red, 1, 0.6);
+  auto home() {
+    if (_setup.state == State::Up)
+      forward();
 
-    else
-      LED.splashHSV(0.3, V2Color::Orange, 0.9, 0.6);
-
-    _setup.home = readDevice().getConjugate();
-    setLED();
+    _setup.home = readCalibrated().conjugate();
   }
 
-  void setup(V23D::Quaternion calibration) {
+  auto setup(bool compass, const V23D::Quaternion& calibration) {
+    _compass = compass;
+
     _setup = {.calibration{calibration}};
-    if (!calibration.isEqual(V23D::Quaternion()))
+    if (!calibration.equal(V23D::Quaternion()))
       _setup.state = State::Calibrated;
 
-    setLED();
+    home();
+    updateLED();
   }
 
-  V23D::Quaternion getSetup() {
+  auto calibration() const -> const V23D::Quaternion& {
     return _setup.calibration;
   }
 
 private:
   enum class State { Init, Up, Calibrated };
+  bool _compass{};
   struct {
-    State state{};
-    V23D::Vector3 up;
+    State            state{};
+    V23D::Vector3    up;
     V23D::Quaternion calibration;
     V23D::Quaternion home;
   } _setup;
@@ -90,69 +116,36 @@ private:
   // is disturbed or not yet known).
   // Or read the orientation without using the magentometer (uses the rotation
   // after starting up, and the orientation might drift over time).
-  V23D::Quaternion readSensor() {
-    return compass ? getGeoOrientation() : getOrientation();
+  auto read() -> V23D::Quaternion {
+    return _compass ? getGeoOrientation() : getOrientation();
   }
 
-  // Apply the calibration (recorded by setTip + setForward sequence).
-  V23D::Quaternion readDevice() {
-    return _setup.calibration * readSensor() * _setup.calibration.getConjugate();
-  }
-
-  // Calculate the rotation needed to rotate the sensor's frame into the device's
-  // frame.
-  // 1. The device points up / to the sky / z axis. The button is pressed twice /
-  //    double click. The LED turns cyan.
-  // 2. The device points forward, the zero position. The rotation axis from up
-  //    to forward defines the x axis of the device, the gravity defines the
-  //    negative z axis.
-  //    The button is pressed once again, the LED of the calibrated device turns
-  //    orange.
-  bool setForward() {
-    if (_setup.state != State::Up) {
-      _setup.state = State::Init;
-      return false;
-    }
-
-    const V23D::Vector3 yAxis = getGravity().normalize();
-
-    // Require a defined/significant movement / angle to prevent wrong
-    // calibration values.
-    const float angle = V23D::radToDeg(_setup.up.getAngleBetween(yAxis));
-    if (angle < 45.f || angle > 135.f) {
-      _setup.state = State::Init;
-      return false;
-    }
-
-    const V23D::Vector3 xAxis = _setup.up.getCross(yAxis).normalize();
-
-    // Calculate the calibration / rotation quaternion to move the sensor's frame
-    // into the device's frame. This way the device can be mounted / held at any
-    // position / any degree and set to zero with the axes properly aligned.
-    _setup.calibration = V23D::Attitude::fromAccelerometerMagnetometer(yAxis, xAxis);
-    _setup.state       = State::Calibrated;
-    return true;
+  // Apply the calibration recorded by tip + forward sequence.
+  auto readCalibrated() -> V23D::Quaternion {
+    return _setup.calibration * read() * _setup.calibration.conjugate();
   }
 } Sensor;
 
 // Config, written to EEPROM.
 static constexpr struct Configuration {
   uint8_t channel{};
-  bool compass{true};
+  bool    compass{true};
+
+  V23D::Quaternion calibration;
 
   struct {
-    float w{1};
-    float x{};
-    float y{};
-    float z{};
-  } calibration;
-
-  struct {
-    bool enabled{};
+    bool    enabled{};
     uint8_t yaw{V2MIDI::CC::GeneralPurpose1 + 4};
     uint8_t pitch{V2MIDI::CC::GeneralPurpose1 + 5};
     uint8_t roll{V2MIDI::CC::GeneralPurpose1 + 6};
   } euler;
+
+  struct {
+    bool    enabled{};
+    uint8_t x{V2MIDI::CC::GeneralPurpose1 + 7};
+    uint8_t y{V2MIDI::CC::GeneralPurpose1 + 8};
+    uint8_t z{V2MIDI::CC::GeneralPurpose1 + 9};
+  } gyroscope;
 } ConfigurationDefault;
 
 static class Device : public V2Device {
@@ -181,130 +174,172 @@ public:
   Configuration config{ConfigurationDefault};
 
   // Store the tip and home orientation in the EPROM.
-  void storeConfiguration() {
-    config.calibration.w = Sensor.getSetup().w;
-    config.calibration.x = Sensor.getSetup().x;
-    config.calibration.y = Sensor.getSetup().y;
-    config.calibration.z = Sensor.getSetup().z;
+  auto storeConfiguration() {
+    config.calibration = Sensor.calibration();
 
     writeConfiguration();
     LED.splashHSV(0.3, V2Color::Magenta, 0.8, 0.5);
   }
 
+  auto silent(bool on = true) {
+    _silent = on;
+  }
+
 private:
+  bool _silent{};
+
   V2MIDI::CC::HighResolution<V2MIDI::CC::GeneralPurpose1, 4> _hires;
-  uint32_t _usec{};
+  uint32_t                                                   _usec{};
   struct {
-    uint8_t w;
-    uint8_t x;
-    uint8_t y;
-    uint8_t z;
-  } _quaternion{};
+    uint8_t w{};
+    uint8_t x{};
+    uint8_t y{};
+    uint8_t z{};
+  } _quaternion;
 
   struct {
-    uint8_t yaw;
-    uint8_t roll;
-    uint8_t pitch;
-  } _euler{};
+    uint8_t yaw{};
+    uint8_t roll{};
+    uint8_t pitch{};
+  } _euler;
+
+  struct {
+    uint8_t x{};
+    uint8_t y{};
+    uint8_t z{};
+  } _gyroscope;
 
   V2MIDI::Packet _midi{};
-  float _lightMax{};
+  float          _lightMax{};
 
-  void handleReset() override {
+  auto handleReset() -> void override {
+    _silent = false;
     _hires.reset();
     _lightMax   = 100.f / 127.f;
     _quaternion = {};
     _euler      = {};
+    _gyroscope  = {};
+
+    Wire.end();
+    Wire.begin();
+    Wire.setClock(1000000);
+    Wire.setTimeout(1);
 
     LED.reset();
     updateBrightness();
-    Sensor.compass = config.compass;
-    Sensor.setup({config.calibration.w, config.calibration.x, config.calibration.y, config.calibration.z});
+    Sensor.setup(config.compass, config.calibration);
   }
 
-  void updateBrightness() {
-    const float min   = 0.05;
-    const float max   = 0.75;
-    const float range = (max - min) * _lightMax;
+  auto updateBrightness() -> void {
+    float min{0.05};
+    float max{0.75};
+    float range{(max - min) * _lightMax};
     LED.setMaxBrightness(min + range);
-    Sensor.setLED();
+    Sensor.updateLED();
   }
 
-  void allNotesOff() {
+  auto allNotesOff() {
     // Send the current values when 'Stop' is pressed in audio workstation.
-    _hires.send(this, config.channel, (uint8_t)CC::Quaternion + 0);
-    _hires.send(this, config.channel, (uint8_t)CC::Quaternion + 1);
-    _hires.send(this, config.channel, (uint8_t)CC::Quaternion + 2);
-    _hires.send(this, config.channel, (uint8_t)CC::Quaternion + 3);
+    _hires.send(this, config.channel, uint8_t(CC::Quaternion) + 0);
+    _hires.send(this, config.channel, uint8_t(CC::Quaternion) + 1);
+    _hires.send(this, config.channel, uint8_t(CC::Quaternion) + 2);
+    _hires.send(this, config.channel, uint8_t(CC::Quaternion) + 3);
 
     if (config.euler.enabled) {
       send(_midi.setControlChange(config.channel, config.euler.yaw, _euler.yaw));
       send(_midi.setControlChange(config.channel, config.euler.pitch, _euler.pitch));
       send(_midi.setControlChange(config.channel, config.euler.roll, _euler.roll));
     }
+
+    if (config.gyroscope.enabled) {
+      send(_midi.setControlChange(config.channel, config.gyroscope.x, _gyroscope.x));
+      send(_midi.setControlChange(config.channel, config.gyroscope.y, _gyroscope.y));
+      send(_midi.setControlChange(config.channel, config.gyroscope.z, _gyroscope.z));
+    }
   }
 
-  void handleLoop() override {
+  auto handleLoop() -> void override {
     if ((uint32_t)(V2Base::getUsec() - _usec) < 20 * 1000)
       return;
 
-    V23D::Quaternion q = Sensor.getRotation();
+    if (_silent)
+      return;
 
-    if (_hires.set((uint8_t)CC::Quaternion + 0, (q.w + 1.f) * 8191.f))
-      _hires.send(this, config.channel, (uint8_t)CC::Quaternion + 0);
+    {
+      auto q{Sensor.getRotation()};
+      if (_hires.set(uint8_t(CC::Quaternion) + 0, (q.w + 1.f) * 8191.f))
+        _hires.send(this, config.channel, uint8_t(CC::Quaternion) + 0);
 
-    if (_hires.set((uint8_t)CC::Quaternion + 1, (q.x + 1.f) * 8191.f))
-      _hires.send(this, config.channel, (uint8_t)CC::Quaternion + 1);
+      if (_hires.set(uint8_t(CC::Quaternion) + 1, (q.x + 1.f) * 8191.f))
+        _hires.send(this, config.channel, uint8_t(CC::Quaternion) + 1);
 
-    if (_hires.set((uint8_t)CC::Quaternion + 2, (q.y + 1.f) * 8191.f))
-      _hires.send(this, config.channel, (uint8_t)CC::Quaternion + 2);
+      if (_hires.set(uint8_t(CC::Quaternion) + 2, (q.y + 1.f) * 8191.f))
+        _hires.send(this, config.channel, uint8_t(CC::Quaternion) + 2);
 
-    if (_hires.set((uint8_t)CC::Quaternion + 3, (q.z + 1.f) * 8191.f))
-      _hires.send(this, config.channel, (uint8_t)CC::Quaternion + 3);
+      if (_hires.set(uint8_t(CC::Quaternion) + 3, (q.z + 1.f) * 8191.f))
+        _hires.send(this, config.channel, uint8_t(CC::Quaternion) + 3);
 
-    if (config.euler.enabled) {
-      const V23D::Euler e = V23D::Euler::fromQuaternion(q);
+      if (config.euler.enabled) {
+        auto e{V23D::Euler::quaternion({q.w, q.y, q.x, -q.z})};
+        if (auto y{uint8_t((e.yaw / std::numbers::pi_v<float> + 1.f) / 2.f * 127.f)}; _euler.yaw != y) {
+          send(_midi.setControlChange(config.channel, config.euler.yaw, y));
+          _euler.yaw = y;
+        }
 
-      // Map the ranges to MIDI Control values.
-      const uint8_t y = (e.yaw / (float)M_PI + 1.f) / 2.f * 127.f;
-      if (_euler.yaw != y) {
-        send(_midi.setControlChange(config.channel, config.euler.yaw, y));
-        _euler.yaw = y;
+        if (auto p{uint8_t((e.pitch / std::numbers::pi_v<float> + 1.f) / 2.f * 127.f)}; _euler.pitch != p) {
+          send(_midi.setControlChange(config.channel, config.euler.pitch, p));
+          _euler.pitch = p;
+        }
+
+        if (auto r{uint8_t((e.roll / std::numbers::pi_v<float> + 1.f) / 2.f * 127.f)}; _euler.roll != r) {
+          send(_midi.setControlChange(config.channel, config.euler.roll, r));
+          _euler.roll = r;
+        }
+      }
+    }
+
+    if (config.gyroscope.enabled) {
+      auto center{[](float v) -> uint8_t {
+        return ceilf((std::clamp((v + 1.f) / 2.f, 0.f, 1.f)) * 127.f);
+      }};
+
+      auto g{Sensor.getAcceleration()};
+      if (auto x{center(g.x)}; _gyroscope.x != x) {
+        send(_midi.setControlChange(config.channel, config.gyroscope.x, x));
+        _gyroscope.x = x;
       }
 
-      const uint8_t p = (e.pitch / (float)M_PI + 1.f) / 2.f * 127.f;
-      if (_euler.pitch != p) {
-        send(_midi.setControlChange(config.channel, config.euler.pitch, p));
-        _euler.pitch = p;
+      if (auto y{center(g.y)}; _gyroscope.y != y) {
+        send(_midi.setControlChange(config.channel, config.gyroscope.y, y));
+        _gyroscope.y = y;
       }
 
-      const uint8_t r = (e.roll / (float)M_PI + 1.f) / 2.f * 127.f;
-      if (_euler.roll != r) {
-        send(_midi.setControlChange(config.channel, config.euler.roll, r));
-        _euler.roll = r;
+      if (auto z{center(g.z)}; _gyroscope.z != z) {
+        send(_midi.setControlChange(config.channel, config.gyroscope.z, z));
+        _gyroscope.z = z;
       }
     }
 
     _usec = V2Base::getUsec();
   }
 
-  bool handleSend(V2MIDI::Packet *midi) override {
+  auto handleSend(V2MIDI::Packet* midi) -> bool override {
     usb.midi.send(midi);
     return true;
   }
 
-  void handleControlChange(uint8_t channel, uint8_t controller, uint8_t value) override {
+  auto handleControlChange(uint8_t channel, uint8_t controller, uint8_t value) -> void override {
     switch (controller) {
-      case (uint8_t)CC::Home:
-        Sensor.setHome();
+      case uint8_t(CC::Home):
+        Sensor.home();
         break;
 
-      case (uint8_t)CC::SaveConfiguration:
+      case uint8_t(CC::SaveConfiguration):
         storeConfiguration();
         break;
 
-      case (uint8_t)CC::Light:
-        _lightMax = (float)value / 127.f;
+      case uint8_t(CC::Light):
+        _lightMax = float(value) / 127.f;
         updateBrightness();
         break;
 
@@ -315,18 +350,45 @@ private:
     }
   }
 
-  void handleSystemReset() override {
+  auto handleSystemExclusive(const uint8_t* buffer, uint32_t len) -> void override {
+    if (len < 20)
+      return;
+
+    // 0x7d == SysEx prototype/research/private ID
+    if (buffer[1] != 0x7d)
+      return;
+
+    // Handle only JSON messages.
+    if (buffer[2] != '{' || buffer[len - 2] != '}')
+      return;
+
+    // Read incoming message.
+    JsonDocument json;
+    if (deserializeJson(json, buffer + 2, len - 1))
+      return;
+
+    JsonObject test{json["test"]};
+    if (!test)
+      return;
+
+    if (test["controller"].isNull())
+      return;
+
+    send(_midi.setControlChange(config.channel, test["controller"], 64));
+  }
+
+  auto handleSystemReset() -> void override {
     reset();
   }
 
-  void exportSystem(JsonObject json) override {
-    JsonObject jsonPower  = json["sensor"].to<JsonObject>();
+  auto exportSystem(JsonObject json) -> void override {
+    JsonObject jsonPower{json["sensor"].to<JsonObject>()};
     jsonPower["product"]  = Sensor.getProductID();
     jsonPower["revision"] = Sensor.getRevisionID();
     jsonPower["software"] = Sensor.getRAMVersion();
   }
 
-  void exportSettings(JsonArray json) override {
+  auto exportSettings(JsonArray json) -> void override {
     {
       JsonObject setting = json.add<JsonObject>();
       setting["type"]    = "number";
@@ -338,56 +400,92 @@ private:
       setting["path"]    = "midi/channel";
     }
     {
-      JsonObject setting = json.add<JsonObject>();
-      setting["type"]    = "toggle";
-      setting["title"]   = "Sensor";
-      setting["label"]   = "Mode";
-      setting["text"]    = "Compass";
-      setting["path"]    = "compass";
+      JsonObject setting{json.add<JsonObject>()};
+      setting["type"]  = "toggle";
+      setting["title"] = "Sensor";
+      setting["label"] = "Mode";
+      setting["text"]  = "Compass";
+      setting["path"]  = "compass";
+    }
+
+    {
+      JsonObject setting{json.add<JsonObject>()};
+      setting["type"]  = "toggle";
+      setting["ruler"] = true;
+      setting["text"]  = "Euler";
+      setting["label"] = "Messages";
+      setting["path"]  = "euler/enabled";
     }
     {
-      JsonObject setting = json.add<JsonObject>();
-      setting["type"]    = "toggle";
-      setting["ruler"]   = true;
-      setting["text"]    = "Euler";
-      setting["label"]   = "Messages";
-      setting["path"]    = "euler/enabled";
-    }
-    {
-      JsonObject setting = json.add<JsonObject>();
+      JsonObject setting{json.add<JsonObject>()};
       setting["type"]    = "controller";
       setting["label"]   = "Yaw";
+      setting["test"]    = true;
       setting["path"]    = "euler/yaw";
       setting["default"] = ConfigurationDefault.euler.yaw;
     }
     {
-      JsonObject setting = json.add<JsonObject>();
+      JsonObject setting{json.add<JsonObject>()};
       setting["type"]    = "controller";
       setting["label"]   = "Pitch";
+      setting["test"]    = true;
       setting["path"]    = "euler/pitch";
       setting["default"] = ConfigurationDefault.euler.pitch;
     }
     {
-      JsonObject setting = json.add<JsonObject>();
+      JsonObject setting{json.add<JsonObject>()};
       setting["type"]    = "controller";
       setting["label"]   = "Roll";
+      setting["test"]    = true;
       setting["path"]    = "euler/roll";
       setting["default"] = ConfigurationDefault.euler.roll;
     }
+
+    {
+      JsonObject setting{json.add<JsonObject>()};
+      setting["type"]  = "toggle";
+      setting["ruler"] = true;
+      setting["text"]  = "Gyroscope";
+      setting["label"] = "Messages";
+      setting["test"]  = true;
+      setting["path"]  = "gyroscope/enabled";
+    }
+    {
+      JsonObject setting{json.add<JsonObject>()};
+      setting["type"]    = "controller";
+      setting["label"]   = "X";
+      setting["test"]    = true;
+      setting["path"]    = "gyroscope/x";
+      setting["default"] = ConfigurationDefault.gyroscope.x;
+    }
+    {
+      JsonObject setting{json.add<JsonObject>()};
+      setting["type"]    = "controller";
+      setting["label"]   = "Y";
+      setting["test"]    = true;
+      setting["path"]    = "gyroscope/y";
+      setting["default"] = ConfigurationDefault.gyroscope.y;
+    }
+    {
+      JsonObject setting{json.add<JsonObject>()};
+      setting["type"]    = "controller";
+      setting["label"]   = "Z";
+      setting["test"]    = true;
+      setting["path"]    = "gyroscope/z";
+      setting["default"] = ConfigurationDefault.gyroscope.z;
+    }
   }
 
-  void importConfiguration(JsonObject json) override {
-    JsonObject jsonMidi = json["midi"];
+  auto importConfiguration(JsonObject json) -> void override {
+    JsonObject jsonMidi{json["midi"]};
     if (jsonMidi) {
       if (!jsonMidi["channel"].isNull()) {
         uint8_t channel = jsonMidi["channel"];
 
         if (channel < 1)
           config.channel = 0;
-
         else if (channel > 16)
           config.channel = 15;
-
         else
           config.channel = channel - 1;
       }
@@ -396,7 +494,7 @@ private:
     if (!json["compass"].isNull())
       config.compass = json["compass"];
 
-    JsonObject jsonCalibration = json["calibration"];
+    JsonObject jsonCalibration{json["calibration"]};
     if (jsonCalibration) {
       config.calibration.w = jsonCalibration["w"];
       config.calibration.x = jsonCalibration["x"];
@@ -404,7 +502,7 @@ private:
       config.calibration.z = jsonCalibration["z"];
     }
 
-    JsonObject jsonEuler = json["euler"];
+    JsonObject jsonEuler{json["euler"]};
     if (jsonEuler) {
       if (!jsonEuler["enabled"].isNull())
         config.euler.enabled = jsonEuler["enabled"];
@@ -414,106 +512,150 @@ private:
       config.euler.roll  = jsonEuler["roll"];
     }
 
+    JsonObject jsonGyroscope{json["gyroscope"]};
+    if (jsonGyroscope) {
+      if (!jsonGyroscope["enabled"].isNull())
+        config.gyroscope.enabled = jsonGyroscope["enabled"];
+
+      config.gyroscope.x = jsonGyroscope["x"];
+      config.gyroscope.y = jsonGyroscope["y"];
+      config.gyroscope.z = jsonGyroscope["z"];
+    }
+
     reset();
   }
 
-  void exportConfiguration(JsonObject json) override {
-    json["#midi"]        = "The MIDI settings";
-    JsonObject jsonMidi  = json["midi"].to<JsonObject>();
-    jsonMidi["#channel"] = "The channel to send notes and control values to";
-    jsonMidi["channel"]  = config.channel + 1;
+  auto exportConfiguration(JsonObject json) -> void override {
+    {
+      json["#midi"] = "The MIDI settings";
+      auto m{json["midi"].to<JsonObject>()};
+      m["#channel"] = "The channel to send notes and control values to";
+      m["channel"]  = config.channel + 1;
+    }
 
     json["#compass"] = "Use the compass for absolute coordinates";
     json["compass"]  = config.compass;
 
-    JsonObject jsonCalibration = json["calibration"].to<JsonObject>();
-    jsonCalibration["#"]       = "The rotation of the sensor to the device's zero position";
-    jsonCalibration["w"]       = serialized(String(config.calibration.w, 4));
-    jsonCalibration["x"]       = serialized(String(config.calibration.x, 4));
-    jsonCalibration["y"]       = serialized(String(config.calibration.y, 4));
-    jsonCalibration["z"]       = serialized(String(config.calibration.z, 4));
-
-    JsonObject jsonEuler = json["euler"].to<JsonObject>();
-    jsonEuler["#"]       = "The controller numbers for Euler coordinates";
-    jsonEuler["enabled"] = config.euler.enabled;
-    jsonEuler["yaw"]     = config.euler.yaw;
-    jsonEuler["pitch"]   = config.euler.pitch;
-    jsonEuler["roll"]    = config.euler.roll;
-  }
-
-  void exportInput(JsonObject json) override {
-    JsonArray jsonControllers = json["controllers"].to<JsonArray>();
     {
-      JsonObject jsonController = jsonControllers.add<JsonObject>();
-      jsonController["name"]    = "Home";
-      jsonController["type"]    = "momentary";
-      jsonController["number"]  = (uint8_t)CC::Home;
+      auto c{json["calibration"].to<JsonObject>()};
+      c["#"] = "The rotation of the sensor to the device's zero position";
+      c["w"] = serialized(String(config.calibration.w, 4));
+      c["x"] = serialized(String(config.calibration.x, 4));
+      c["y"] = serialized(String(config.calibration.y, 4));
+      c["z"] = serialized(String(config.calibration.z, 4));
     }
     {
-      JsonObject jsonController = jsonControllers.add<JsonObject>();
-      jsonController["name"]    = "Save";
-      jsonController["type"]    = "momentary";
-      jsonController["number"]  = (uint8_t)CC::SaveConfiguration;
+      auto e{json["euler"].to<JsonObject>()};
+      e["#"]       = "The controller numbers for the Euler coordinates";
+      e["enabled"] = config.euler.enabled;
+      e["yaw"]     = config.euler.yaw;
+      e["pitch"]   = config.euler.pitch;
+      e["roll"]    = config.euler.roll;
     }
     {
-      JsonObject jsonController = jsonControllers.add<JsonObject>();
-      jsonController["name"]    = "Brightness";
-      jsonController["number"]  = (uint8_t)CC::Light;
-      jsonController["value"]   = (uint8_t)(_lightMax * 127.f);
+      auto g{json["gyroscope"].to<JsonObject>()};
+      g["#"]       = "The controller numbers for the gyroscope";
+      g["enabled"] = config.gyroscope.enabled;
+      g["x"]       = config.gyroscope.x;
+      g["y"]       = config.gyroscope.y;
+      g["z"]       = config.gyroscope.z;
     }
   }
 
-  void exportOutput(JsonObject json) override {
+  auto exportInput(JsonObject json) -> void override {
+    auto jsonControllers{json["controllers"].to<JsonArray>()};
+    {
+      auto c{jsonControllers.add<JsonObject>()};
+      c["name"]   = "Home";
+      c["type"]   = "momentary";
+      c["number"] = uint8_t(CC::Home);
+    }
+    {
+      auto c{jsonControllers.add<JsonObject>()};
+      c["name"]   = "Save";
+      c["type"]   = "momentary";
+      c["number"] = uint8_t(CC::SaveConfiguration);
+    }
+    {
+      auto c{jsonControllers.add<JsonObject>()};
+      c["name"]   = "Brightness";
+      c["number"] = uint8_t(CC::Light);
+      c["value"]  = uint8_t(_lightMax) * 127.f;
+    }
+  }
+
+  auto exportOutput(JsonObject json) -> void override {
     json["channel"] = config.channel;
 
-    JsonArray jsonControllers = json["controllers"].to<JsonArray>();
+    auto jsonControllers{json["controllers"].to<JsonArray>()};
     {
-      JsonObject jsonController   = jsonControllers.add<JsonObject>();
-      jsonController["name"]      = "Quaternion W";
-      jsonController["number"]    = (uint8_t)CC::Quaternion + 0;
-      jsonController["value"]     = _hires.getMSB((uint8_t)CC::Quaternion + 0);
-      jsonController["valueFine"] = _hires.getLSB((uint8_t)CC::Quaternion + 0);
+      auto c{jsonControllers.add<JsonObject>()};
+      c["name"]      = "Quaternion W";
+      c["number"]    = uint8_t(CC::Quaternion) + 0;
+      c["value"]     = _hires.getMSB(uint8_t(CC::Quaternion) + 0);
+      c["valueFine"] = _hires.getLSB(uint8_t(CC::Quaternion) + 0);
     }
     {
-      JsonObject jsonController   = jsonControllers.add<JsonObject>();
-      jsonController["name"]      = "Quaternion X";
-      jsonController["number"]    = (uint8_t)CC::Quaternion + 1;
-      jsonController["value"]     = _hires.getMSB((uint8_t)CC::Quaternion + 1);
-      jsonController["valueFine"] = _hires.getLSB((uint8_t)CC::Quaternion + 1);
+      auto c{jsonControllers.add<JsonObject>()};
+      c["name"]      = "Quaternion X";
+      c["number"]    = uint8_t(CC::Quaternion) + 1;
+      c["value"]     = _hires.getMSB(uint8_t(CC::Quaternion) + 1);
+      c["valueFine"] = _hires.getLSB(uint8_t(CC::Quaternion) + 1);
     }
     {
-      JsonObject jsonController   = jsonControllers.add<JsonObject>();
-      jsonController["name"]      = "Quaternion Y";
-      jsonController["number"]    = (uint8_t)CC::Quaternion + 2;
-      jsonController["value"]     = _hires.getMSB((uint8_t)CC::Quaternion + 2);
-      jsonController["valueFine"] = _hires.getLSB((uint8_t)CC::Quaternion + 2);
+      auto c{jsonControllers.add<JsonObject>()};
+      c["name"]      = "Quaternion Y";
+      c["number"]    = uint8_t(CC::Quaternion) + 2;
+      c["value"]     = _hires.getMSB(uint8_t(CC::Quaternion) + 2);
+      c["valueFine"] = _hires.getLSB(uint8_t(CC::Quaternion) + 2);
     }
     {
-      JsonObject jsonController   = jsonControllers.add<JsonObject>();
-      jsonController["name"]      = "Quaternion Z";
-      jsonController["number"]    = (uint8_t)CC::Quaternion + 3;
-      jsonController["value"]     = _hires.getMSB((uint8_t)CC::Quaternion + 3);
-      jsonController["valueFine"] = _hires.getLSB((uint8_t)CC::Quaternion + 3);
+      auto c{jsonControllers.add<JsonObject>()};
+      c["name"]      = "Quaternion Z";
+      c["number"]    = uint8_t(CC::Quaternion) + 3;
+      c["value"]     = _hires.getMSB(uint8_t(CC::Quaternion) + 3);
+      c["valueFine"] = _hires.getLSB(uint8_t(CC::Quaternion) + 3);
     }
 
     if (config.euler.enabled) {
       {
-        JsonObject jsonController = jsonControllers.add<JsonObject>();
-        jsonController["name"]    = "Euler Yaw";
-        jsonController["number"]  = config.euler.yaw;
-        jsonController["value"]   = _euler.yaw;
+        auto c{jsonControllers.add<JsonObject>()};
+        c["name"]   = "Euler Yaw";
+        c["number"] = config.euler.yaw;
+        c["value"]  = _euler.yaw;
       }
       {
-        JsonObject jsonController = jsonControllers.add<JsonObject>();
-        jsonController["name"]    = "Euler Pitch";
-        jsonController["number"]  = config.euler.pitch;
-        jsonController["value"]   = _euler.pitch;
+        auto c{jsonControllers.add<JsonObject>()};
+        c["name"]   = "Euler Pitch";
+        c["number"] = config.euler.pitch;
+        c["value"]  = _euler.pitch;
       }
       {
-        JsonObject jsonController = jsonControllers.add<JsonObject>();
-        jsonController["name"]    = "Euler Roll";
-        jsonController["number"]  = config.euler.roll;
-        jsonController["value"]   = _euler.roll;
+        auto c{jsonControllers.add<JsonObject>()};
+        c["name"]   = "Euler Roll";
+        c["number"] = config.euler.roll;
+        c["value"]  = _euler.roll;
+      }
+    }
+
+    if (config.gyroscope.enabled) {
+      {
+        auto c{jsonControllers.add<JsonObject>()};
+        c["name"]   = "Gyroscope X";
+        c["number"] = config.gyroscope.x;
+        c["value"]  = _gyroscope.x;
+      }
+      {
+        auto c{jsonControllers.add<JsonObject>()};
+        c["name"]   = "Gyroscope Y";
+        c["number"] = config.gyroscope.y;
+        c["value"]  = _gyroscope.y;
+      }
+      {
+        auto c{jsonControllers.add<JsonObject>()};
+        c["name"]   = "Gyroscope Z";
+        c["number"] = config.gyroscope.z;
+        c["value"]  = _gyroscope.z;
       }
     }
   }
@@ -541,50 +683,54 @@ public:
 private:
   const V2Buttons::Config _config{.clickUsec{200 * 1000}, .holdUsec{500 * 1000}};
 
-  void handleHold(uint8_t count) override {
+  auto handleUp() -> void {
+    Device.silent(false);
+  }
+
+  auto handleHold(uint8_t count) -> void override {
     switch (count) {
+      case 0:
+        Device.silent();
+        break;
+
       case 1:
         Device.storeConfiguration();
         break;
 
       case 2:
-        Device.config.calibration = {1, 0, 0, 0};
+        Device.config.calibration = {};
         Device.reset();
         Device.storeConfiguration();
         break;
     }
   }
 
-  void handleClick(uint8_t count) override {
+  auto handleClick(uint8_t count) -> void override {
     switch (count) {
       case 0:
-        Sensor.setHome();
+        Sensor.home();
         break;
 
       case 1:
-        Sensor.setTip();
+        Sensor.tip();
         break;
     }
   }
 } Button;
 
-void setup() {
+auto setup() -> void {
   Serial.begin(9600);
-
   Wire.begin();
   Wire.setClock(1000000);
   Wire.setTimeout(1);
-
   LED.begin();
-
   Sensor.begin();
   Button.begin();
-
   Device.begin();
   Device.reset();
 }
 
-void loop() {
+auto loop() -> void {
   LED.loop();
   MIDI.loop();
   Sensor.loop();
