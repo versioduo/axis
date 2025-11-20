@@ -4,21 +4,22 @@
 
 Sends MIDI Control Change messages with Quaternion or Euler orientation data.
 
-The device can be mounted at any orientation or angle, and calibrated to align its axes
-and set to zero position:
+## Setup
 
--   The device, or the body it is mounted on, points upwards / to the sky. A double-click
-    of the the button. The LED turns green.
+The device can be mounted at any orientation or angle, the reference frame / axes can be aligned to the current posion and stored in the device. This sequence identifies the Y axis (the axis of rotation between the button clicks) and the Z axis (the gravity at the second step):
 
--   The device points forward, the zero position, a single click. The LED turns orange.
-    The axes of the sensor are aligned to world coordinates and the position reset to zero.
+- The device, or the body it is mounted on, points upwards / to the sky. A double-click of the the button, the LED turns green.
 
--   Any single click will reset the position to zero, but not change the calibration.
+- The device points forward, the zero position. A single click, the LED turns orange. The axes of the sensor are now aligned and the rotation reset to zero.
 
--   A long-press double-click will save the calibration to the EEPROM. The LED flashes purple.
+- Any single click will set the rotation to zero, but not change the reference frame.
 
-This sequence identifies the Y axis (the axis of rotation between the button presses)
-and the Z axis (the gravity at the second step).
+- A long-press double-click will store the calibration in the device, the LED flashes purple.
+
+A long-press triple-click erases the stored data, the LED flashes purple.
+
+## Control Change Mapping
+Holding the device button down, suppresses all Control Change messages. The CC numbers can be configured in the Setting section. Pressing the blue button there, sends this single CC message; it can be used to map the CC in the Audio Workstation."
 
 ![axis hardware](images/front.jpg?raw=true)
 

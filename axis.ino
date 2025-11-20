@@ -155,13 +155,26 @@ public:
     metadata.product     = "V2 axis";
     metadata.description = "Orientation Sensor";
     metadata.home        = "https://versioduo.com/#axis";
-
-    system.download  = "https://versioduo.com/download";
-    system.configure = "https://versioduo.com/configure";
-
-    usb.ports.standard = 0;
-
-    configuration = {.version{2}, .size{sizeof(config)}, .data{&config}};
+    system.download      = "https://versioduo.com/download";
+    system.configure     = "https://versioduo.com/configure";
+    usb.ports.standard   = 0;
+    configuration        = {.version{2}, .size{sizeof(config)}, .data{&config}};
+    help.device          = "Accelerometer, Gyroscope, Magentometer – MIDI Control Change messages with Quaternion or Euler data.";
+    help.configuration   = "# Setup\n"
+                           "The device can be mounted at any orientation or angle, the reference frame / axes can be aligned to the current "
+                           "posion and stored in the device. This sequence identifies the Y axis (the axis of rotation between the button "
+                           "clicks) and the Z axis (the gravity at the second step):\n"
+                           "• The device, or the body it is mounted on, points upwards / to the sky. A double-click of the the button, the "
+                           "LED turns green.\n"
+                           "• The device points forward, the zero position. A single click, the LED turns orange. The axes of the sensor are "
+                           "now aligned and the rotation reset to zero.\n"
+                           "• Any single click will set the rotation to zero, but not change the reference frame.\n"
+                           "• A long-press double-click will store the calibration in the device, the LED flashes purple.\n"
+                           "A long-press triple-click erases the stored data, the LED flashes purple.\n"
+                           "# Control Change Mapping\n"
+                           "Holding the device button down, suppresses all Control Change messages. The CC numbers can be configured in "
+                           "the Setting section. Pressing the blue button there, sends this single CC message; it can be used to map the CC "
+                           "in the Audio Workstation.";
   }
 
   enum class CC {
@@ -379,6 +392,15 @@ private:
 
   auto handleSystemReset() -> void override {
     reset();
+  }
+
+  void exportLinks(JsonArray json) override {
+    JsonObject jsonLink     = json.add<JsonObject>();
+    jsonLink["description"] = "Rotating Cube";
+
+    char link[128] = "https://versioduo.com/axis3d?connect=";
+    strlcat(link, usb.name ? usb.name : metadata.product, sizeof(link));
+    jsonLink["target"] = link;
   }
 
   auto exportSystem(JsonObject json) -> void override {
