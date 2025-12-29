@@ -1,0 +1,6 @@
+{
+  "cpu": {
+    "fqbn": "versioduo:samd:axis",
+    "name": "V2 axis"
+  }
+}
