@@ -8346,15 +8346,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 213.36 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "0ede325f-26f9-4836-97b9-8d952172d71e")
 		)
@@ -8445,15 +8436,6 @@
 		)
 		(property "Manufacturer" "YAGEO"
 			(at 115.57 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 115.57 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8615,15 +8597,6 @@
 		)
 		(property "Manufacturer" "Semtech"
 			(at 252.73 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 252.73 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8804,15 +8777,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 148.59 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "a74eebf5-9491-4f7a-a07d-eb8240e5e5d2")
 		)
@@ -8902,15 +8866,6 @@
 		)
 		(property "Product" "SKSGACE010"
 			(at 254 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 254 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9158,15 +9113,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 33.02 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "e55e9008-b3f1-4e00-84ec-54b3ff2d17ed")
 		)
@@ -9405,15 +9351,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 127 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "04d62725-9abb-40ec-b476-f92cf9ca5fab")
 		)
@@ -9577,15 +9514,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 250.19 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "d103674b-7ace-4f36-8d35-8d6b17321d70")
 		)
@@ -9611,13 +9539,13 @@
 		(lib_id "V2_PCB_Devices:Button-bottom")
 		(at 205.74 157.48 90)
 		(unit 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "2ea90a9c-c79e-495b-b221-c6ea8643fdb4")
 		(property "Reference" "SWB101"
-			(at 208.28 147.32 90)
+			(at 209.55 147.32 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9626,7 +9554,7 @@
 			)
 		)
 		(property "Value" "Button-bottom"
-			(at 217.17 151.13 90)
+			(at 213.614 150.622 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9654,15 +9582,6 @@
 		)
 		(property "Description" ""
 			(at 205.74 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 205.74 157.48 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9769,15 +9688,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 205.74 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "0ddde3ce-c4f1-4ec5-a9fa-6fda6649f90d")
 		)
@@ -9797,7 +9707,7 @@
 		(lib_id "V2_Mechanical:MountingHole_2mm")
 		(at 254 151.13 0)
 		(unit 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
@@ -9839,15 +9749,6 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 254 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 254 151.13 0)
 			(effects
 				(font
@@ -10014,15 +9915,6 @@
 		)
 		(property "Rating" "100mW"
 			(at 83.82 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 83.82 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10268,15 +10160,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 30.48 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "e8d4e34d-087b-40d9-a7c4-4651f3497804")
 		)
@@ -10371,15 +10254,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 193.04 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "661209ae-1785-4951-81ab-0b06d3e00381")
 		)
@@ -10420,7 +10294,7 @@
 		(lib_id "V2_Cortex_Debug:Cortex_Debug")
 		(at 125.73 101.6 0)
 		(unit 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
@@ -10461,15 +10335,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 125.73 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 125.73 101.6 0)
 			(effects
 				(font
@@ -10781,15 +10646,6 @@
 		)
 		(property "LCSC" "C965555"
 			(at 267.97 71.628 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 267.97 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11375,15 +11231,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 180.34 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "57bc10d6-dcbc-4478-b237-b99d43c6d238")
 		)
@@ -11509,15 +11356,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 180.34 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 180.34 189.23 0)
 			(effects
 				(font
@@ -11721,15 +11559,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 234.95 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(instances
 			(project "axis"
 				(path "/6c8448b4-b04d-47e1-934e-e40cbe27a7be"
@@ -11884,15 +11713,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 34.29 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "f2c152de-214a-46e7-b4d0-e7b7121fb943")
 		)
@@ -11990,15 +11810,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 36.83 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "dbad3011-3bb7-4b68-acdf-fdc265c6dd90")
 		)
@@ -12089,15 +11900,6 @@
 		)
 		(property "Manufacturer" "TDK"
 			(at 63.5 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 63.5 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12265,15 +12067,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 134.62 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "A1"
 			(uuid "cd120ffc-793b-4ae3-a3e5-4b39845d8602")
 		)
@@ -12376,15 +12169,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 254 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(instances
 			(project "axis"
 				(path "/6c8448b4-b04d-47e1-934e-e40cbe27a7be"
@@ -12468,15 +12252,6 @@
 		)
 		(property "Manufacturer" "YAGEO"
 			(at 31.75 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 31.75 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12639,15 +12414,6 @@
 		)
 		(property "Manufacturer" "YAGEO"
 			(at 80.01 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 64.77 168.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12958,15 +12724,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 134.62 54.61 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "033939a2-7fb5-4ef9-a4b8-e99e3748741d")
 		)
@@ -13262,15 +13019,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 105.41 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "4cf1b210-2b1a-44fa-ac9c-0947a1a1fb8f")
 		)
@@ -13432,15 +13180,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 85.09 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "957882ff-7c79-433b-b595-cba74e7b0f1d")
 		)
@@ -13576,15 +13315,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 254 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(instances
 			(project "axis"
 				(path "/6c8448b4-b04d-47e1-934e-e40cbe27a7be"
@@ -13683,15 +13413,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 213.36 97.79 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "96090df5-609e-4a0a-a59c-9611971582f2")
 		)
@@ -13781,15 +13502,6 @@
 		)
 		(property "Product" "SKSGACE010"
 			(at 128.27 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 128.27 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13949,15 +13661,6 @@
 		)
 		(property "LCSC" "C464452"
 			(at 49.53 235.458 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 49.53 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14129,15 +13832,6 @@
 		)
 		(property "Rating" "100mW"
 			(at 86.36 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 86.36 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14504,15 +14198,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 186.69 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "A5"
 			(uuid "7f58d90e-c336-4a76-b7b5-08e96bd58c9d")
 		)
@@ -14629,15 +14314,6 @@
 		)
 		(property "Manufacturer" "TDK"
 			(at 64.77 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 64.77 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14799,7 +14475,7 @@
 		(lib_id "V2_Mechanical:MountingHole_2mm")
 		(at 254 158.75 0)
 		(unit 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
@@ -14841,15 +14517,6 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 254 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 254 158.75 0)
 			(effects
 				(font
@@ -15015,15 +14682,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 95.25 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "456a6422-df18-4ff1-9de7-000df4adc192")
 		)
@@ -15086,15 +14744,6 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
-			(at 254 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 254 179.07 0)
 			(effects
 				(font
@@ -15186,15 +14835,6 @@
 		)
 		(property "Product" "ATSAMD51G19A-MU"
 			(at 76.2 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
-			(at 76.2 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15500,7 +15140,7 @@
 		(lib_id "V2_Artwork:Board_axis")
 		(at 179.07 175.26 0)
 		(unit 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
@@ -15543,15 +15183,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 179.07 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 179.07 175.26 0)
 			(effects
 				(font
@@ -15723,15 +15354,6 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
-			(at 57.15 123.19 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "882ecb35-114d-452b-8aca-e842a8eb4a00")
 		)
@@ -15751,7 +15373,7 @@
 		(lib_id "V2_Artwork:V2-logo")
 		(at 180.34 156.21 0)
 		(unit 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
@@ -15794,15 +15416,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 180.34 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" ""
 			(at 180.34 156.21 0)
 			(effects
 				(font
