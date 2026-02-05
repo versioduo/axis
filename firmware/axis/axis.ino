@@ -234,7 +234,7 @@ private:
 
     Wire.end();
     Wire.begin();
-    Wire.setClock(1000000);
+    Wire.setClock(800 * 1000);
     Wire.setTimeout(1);
 
     LED.reset();
@@ -741,9 +741,6 @@ private:
 
 auto setup() -> void {
   Serial.begin(9600);
-  Wire.begin();
-  Wire.setClock(1000000);
-  Wire.setTimeout(1);
   LED.begin();
   Sensor.begin();
   Button.begin();
