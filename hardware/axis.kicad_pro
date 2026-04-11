@@ -598,7 +598,7 @@
     "netclass_patterns": [
       {
         "netclass": "USB",
-        "pattern": "/USB*"
+        "pattern": "*/USB*"
       },
       {
         "netclass": "Ground",
