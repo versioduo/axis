@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "V2 axis")
-		(date "2026-04-10")
+		(date "2026-04-14")
 		(rev "2026-01-14")
 		(company "Versio Duo")
 		(comment 1 "Orientation Sensor")
@@ -3153,7 +3153,7 @@
 				)
 			)
 			(property "Footprint" "V2_ESD_Suppressor:SLP1210N6"
-				(at 0 -13.97 0)
+				(at 0 -19.05 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -3186,7 +3186,7 @@
 				)
 			)
 			(property "Mouser" "947-RCLAMP0582N.TCT"
-				(at 0 -21.59 0)
+				(at 0 -26.67 0)
 				(show_name yes)
 				(do_not_autoplace no)
 				(hide yes)
@@ -3197,7 +3197,7 @@
 				)
 			)
 			(property "Product" "RCLAMP0582N.TCT"
-				(at 0 -19.05 0)
+				(at 0 -24.13 0)
 				(show_name yes)
 				(do_not_autoplace no)
 				(hide yes)
@@ -3208,7 +3208,7 @@
 				)
 			)
 			(property "Manufacturer" "Semtech"
-				(at 0 -16.51 0)
+				(at 0 -21.59 0)
 				(show_name yes)
 				(do_not_autoplace no)
 				(hide yes)
@@ -3219,7 +3219,18 @@
 				)
 			)
 			(property "Id" "ESD:${SYMBOL_NAME}"
-				(at 0 -11.43 0)
+				(at 0 -16.51 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Rating" "20kV"
+				(at 0 -29.21 0)
 				(show_name yes)
 				(do_not_autoplace no)
 				(hide yes)
@@ -3944,7 +3955,7 @@
 				)
 			)
 			(property "Footprint" "V2_Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.45x5.45mm_ThermalVias"
-				(at 0 -63.5 0)
+				(at 0 -68.58 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -3977,7 +3988,7 @@
 				)
 			)
 			(property "Mouser" "556-ATSAMD51G19AMU"
-				(at 0 -71.12 0)
+				(at 0 -76.2 0)
 				(show_name yes)
 				(do_not_autoplace no)
 				(hide yes)
@@ -3988,7 +3999,7 @@
 				)
 			)
 			(property "Manufacturer" "Microchip Technology"
-				(at 0 -66.04 0)
+				(at 0 -71.12 0)
 				(show_name yes)
 				(do_not_autoplace no)
 				(hide yes)
@@ -3999,7 +4010,7 @@
 				)
 			)
 			(property "Product" "ATSAMD51G19A-MU"
-				(at 0 -68.58 0)
+				(at 0 -73.66 0)
 				(show_name yes)
 				(do_not_autoplace no)
 				(hide yes)
@@ -4010,7 +4021,18 @@
 				)
 			)
 			(property "Id" "MCU:${SYMBOL_NAME}"
-				(at 0 -60.96 0)
+				(at 0 -66.04 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Rating" "Cortex-M4F"
+				(at 0 -78.74 0)
 				(show_name yes)
 				(do_not_autoplace no)
 				(hide yes)
@@ -8920,7 +8942,7 @@
 		)
 		(uuid "5a4791fa-8864-43b3-8d0a-7d32181c50e6")
 	)
-	(label "+VDDCORE"
+	(label "+VCORE"
 		(at 63.5 21.59 0)
 		(effects
 			(font
@@ -9570,6 +9592,17 @@
 		)
 		(property "Id" "ESD:${SYMBOL_NAME}"
 			(at 252.73 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Rating" "20kV"
+			(at 252.73 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10778,7 +10811,7 @@
 		(at 234.95 152.4 90)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
@@ -10829,6 +10862,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 234.95 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Enable" "0"
 			(at 234.95 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -17431,6 +17475,17 @@
 				)
 			)
 		)
+		(property "Rating" "Cortex-M4F"
+			(at 76.2 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "be67758d-4b2d-4ca5-8db6-52b7edac2291")
 			(alternate "XIN32")
@@ -17754,7 +17809,7 @@
 		(at 176.53 165.1 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
@@ -17806,6 +17861,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 176.53 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Enable" "0"
 			(at 176.53 165.1 0)
 			(hide yes)
 			(show_name no)

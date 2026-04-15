@@ -8,7 +8,7 @@
 	)
 	(paper "A4")
 	(title_block
-		(date "2026-04-10")
+		(date "2026-04-14")
 		(rev "2026-01-14")
 	)
 	(layers
@@ -262,6 +262,12 @@
 		(path "/d73b3036-3177-4491-8d2e-5e4ffc77472e")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -491,6 +497,12 @@
 		(path "/0676cd79-b280-49f0-bb2b-642706e7858b")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -723,6 +735,12 @@
 		(path "/a41840ca-5582-40f4-9112-85bbc96b7670")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -887,7 +905,13 @@
 		(path "/eb320d3b-854f-4741-81de-3517416402a6")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
+		(attr exclude_from_bom allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(pad "" np_thru_hole circle
 			(at 0 0)
@@ -1021,6 +1045,12 @@
 		(path "/dd80d92c-3fbf-4d19-a72d-81da37e9b062")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1184,7 +1214,13 @@
 		(path "/876d56f7-a978-4186-816c-574fe505860f")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
+		(attr exclude_from_bom allow_missing_courtyard)
 		(stackup
 			(layer "F.Cu")
 			(layer "B.Cu")
@@ -1544,6 +1580,12 @@
 		(path "/e26cd7e8-e2c0-4ed6-a5a4-72dbf23c703c")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "S" "G" "V" "A5" "B5" "A7" "B7" "A6" "B6" "A8" "B8")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_poly
 			(pts
@@ -2121,6 +2163,12 @@
 		(path "/f3ebfb05-17be-488d-b5c3-e4a62e3009d2")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
 		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -2279,6 +2327,12 @@
 		(path "/4c2ca3d7-595a-4941-8dde-97c63f98a21e")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "8" "7" "5" "9" "2" "3" "4" "6" "1")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2822,6 +2876,12 @@
 		(path "/8aa35fa2-54d2-4de6-84fb-e40adea5ce97")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3050,6 +3110,12 @@
 		(path "/20d18c71-0c4f-4fe9-adf5-8312228ea199")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "3" "4" "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3293,6 +3359,12 @@
 		(path "/0568475a-6e55-4952-936a-050be0e55aa5")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3520,6 +3592,12 @@
 		(path "/e36fe40f-c4b2-45a4-9a32-8eb838783005")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3732,9 +3810,32 @@
 				)
 			)
 		)
+		(property "Rating" "Cortex-M4F"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9229a3d0-4c33-486e-9987-fc42dfac676c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/f4759d56-d48f-441c-8f47-0954c573a38c")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "9" "10" "11" "12" "13" "14" "15" "16" "21" "22"
+					"23" "24" "25" "26" "27" "28" "29" "30" "31" "32" "33" "34" "39" "45"
+					"46" "40" "43" "41" "18" "35" "42" "5" "36" "17" "44" "49" "6" "47"
+					"48" "7" "8" "19" "20" "37" "38"
+				)
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4783,7 +4884,7 @@
 			(size 0.27 0.85)
 			(layers "F.Cu" "F.Mask")
 			(roundrect_rratio 0.3)
-			(net "/+VDDCORE")
+			(net "/+VCORE")
 			(pinfunction "VDDCORE_41")
 			(pintype "power_out")
 			(uuid "1355993b-18f4-43ac-bfb0-f7ab71490c72")
@@ -4866,7 +4967,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -4881,7 +4982,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -4896,7 +4997,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -4911,7 +5012,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -4926,7 +5027,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -4941,7 +5042,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -4956,7 +5057,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -4971,7 +5072,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -4986,7 +5087,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5001,7 +5102,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5016,7 +5117,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5031,7 +5132,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5046,7 +5147,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5083,7 +5184,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5098,7 +5199,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5113,7 +5214,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5128,7 +5229,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5143,7 +5244,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5158,7 +5259,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5173,7 +5274,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5188,7 +5289,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5203,7 +5304,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5218,7 +5319,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5233,7 +5334,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5248,7 +5349,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "PAD_49")
 			(pintype "power_in")
@@ -5391,6 +5492,12 @@
 		(path "/043872f7-f031-4401-97f4-30673956f95a")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5555,6 +5662,12 @@
 		(path "/977377c2-2f87-473b-87b3-55cb2215e7cb")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
 		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -5713,6 +5826,12 @@
 		(path "/014e2b3d-bc20-401b-9db2-e5725f2843fa")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5877,7 +5996,13 @@
 		(path "/4cc11ea8-fcc3-4f81-a9b7-809c1c7ae0b6")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom)
+		(units
+			(unit
+				(name "A")
+				(pins "1" "3" "5" "2" "4" "10")
+			)
+		)
+		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 2.9972 -0.7112)
@@ -6037,7 +6162,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "GND_3")
 			(pintype "power_in")
@@ -6072,7 +6197,7 @@
 			(layers "*.Cu")
 			(remove_unused_layers yes)
 			(keep_end_layers yes)
-			(zone_layer_connections)
+			(zone_layer_connections "In1.Cu" "In2.Cu")
 			(net "GND")
 			(pinfunction "GND_5")
 			(pintype "passive")
@@ -6162,7 +6287,13 @@
 		(path "/35eb91c6-7e8c-4e26-9f1f-0a372493d076")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
+		(attr exclude_from_bom allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(pad "" np_thru_hole circle
 			(at 0 0)
@@ -6296,6 +6427,12 @@
 		(path "/cf32a5fd-5f5f-475f-9178-9dee2092531c")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6459,7 +6596,13 @@
 		(path "/7eb06b9d-d894-478a-bc35-8590f2ab48d6")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
+		(attr exclude_from_bom allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_text user "${REVISION} (${ISSUE_DATE})"
 			(at 0 0 0)
@@ -6544,7 +6687,13 @@
 		(path "/ff5fa334-854e-4ca7-a359-9c419e0f5264")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
+		(attr exclude_from_bom allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_poly
 			(pts
@@ -6806,6 +6955,12 @@
 		(path "/c260461d-00b9-4eb9-b031-8db68de74a86")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7035,6 +7190,12 @@
 		(path "/db2e7cd7-d581-4e59-b8cc-804cecf82db8")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7267,6 +7428,12 @@
 		(path "/9b95cb83-a45c-4669-9b91-f341db699f30")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7494,6 +7661,12 @@
 		(path "/32f9cf95-5154-44fe-a4a0-3bd7d0128ffb")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7721,6 +7894,12 @@
 		(path "/f9c63b6f-58f5-463c-9aaf-9b2e31fb1861")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7934,6 +8113,12 @@
 		(path "/962d59a5-1bb1-4920-a9c9-4066c047cc2b")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "B4" "C1" "A3" "A5" "D2" "D4" "A1" "E5" "B2" "C5" "E1" "E3")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8414,6 +8599,12 @@
 		(path "/8b1cb416-f9ac-41d1-988c-0516ecf3ab43")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8492,7 +8683,7 @@
 			(size 0.7 0.8)
 			(layers "F.Cu" "F.Mask")
 			(roundrect_rratio 0.1428571429)
-			(net "/+VDDCORE")
+			(net "/+VCORE")
 			(pintype "passive")
 			(uuid "322dfbc2-d784-4fd3-a9ba-167f9a2d1822")
 		)
@@ -8641,6 +8832,12 @@
 		(path "/13c877fb-c993-4736-b109-cd94d23a18fc")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8801,10 +8998,29 @@
 				)
 			)
 		)
+		(property "Sim.Enable" "0"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "65ab7fef-52ca-46b7-ac58-e307e9788919")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/f76658e4-ebe7-40c6-8b1b-2548f92a4fd0")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
+		(attr exclude_from_bom allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_poly
 			(pts
@@ -9414,6 +9630,12 @@
 		(path "/5f1c71be-b9b9-47cf-820f-4afd322e7da4")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "3" "4" "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9657,6 +9879,12 @@
 		(path "/b3b0c6e8-2d4f-44f3-863f-e6c1387584b1")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9884,6 +10112,12 @@
 		(path "/386d2317-e93d-46a2-89c6-3ad26ef5b30e")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10111,6 +10345,12 @@
 		(path "/ed37f273-203c-4e14-8c3f-6d3652cda11b")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10340,6 +10580,12 @@
 		(path "/8983cb51-a714-4dae-ba79-062889bdc4de")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10640,6 +10886,12 @@
 		(path "/1ded23bb-9e01-4b5c-b1b4-6483eb39a60c")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10849,10 +11101,29 @@
 				)
 			)
 		)
+		(property "Sim.Enable" "0"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3cd6c32f-f516-48a9-ab4e-12e12cb2d426")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/2ea90a9c-c79e-495b-b221-c6ea8643fdb4")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
+		(attr exclude_from_bom allow_missing_courtyard)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 1.6 -7.1)
@@ -11109,6 +11380,14 @@
 		(path "/dcd3b18a-f83e-4431-933d-f280ca134182")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "24" "23" "12" "9" "3" "11" "1" "2" "4" "5" "6" "14" "15" "16"
+					"17" "19" "22" "13" "8" "10" "21" "7" "20" "18"
+				)
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11644,9 +11923,28 @@
 				)
 			)
 		)
+		(property "Rating" "20kV"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c5788f0c-fac8-4a9d-8018-f3a43533a299")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/04efcacc-5cf4-4605-81ff-2960516efa9d")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "4" "3" "5" "2" "6" "1")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11991,6 +12289,12 @@
 		(path "/445d9c7b-9dd4-4923-bf74-8b576f917715")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12155,6 +12459,12 @@
 		(path "/d70eefe3-c463-42c7-ad37-0fcb53cb0f3d")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins)
+			)
+		)
 		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -12313,6 +12623,12 @@
 		(path "/7b98613e-b8b1-47a7-9e89-8ffbf5190c29")
 		(sheetname "/")
 		(sheetfile "axis.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -17216,30 +17532,6 @@
 		(uuid "e58d3dfb-2167-48eb-9d1c-a7aa5038b542")
 	)
 	(segment
-		(start 144.75 102.8)
-		(end 144.75 102.1375)
-		(width 0.3)
-		(layer "F.Cu")
-		(net "/+VDDCORE")
-		(uuid "2b3eb9c2-2a78-42c4-a7cc-a86ffabd787d")
-	)
-	(segment
-		(start 146.1375 100.75)
-		(end 146.275 100.75)
-		(width 0.3)
-		(layer "F.Cu")
-		(net "/+VDDCORE")
-		(uuid "475aa2ea-a3a4-429d-b81c-618aa60543d9")
-	)
-	(segment
-		(start 144.75 102.1375)
-		(end 146.1375 100.75)
-		(width 0.3)
-		(layer "F.Cu")
-		(net "/+VDDCORE")
-		(uuid "c80f7a5f-53e5-4f1b-b9a8-86a4b565a750")
-	)
-	(segment
 		(start 140.898442 101.648442)
 		(end 142.148442 101.648442)
 		(width 0.2)
@@ -17578,6 +17870,30 @@
 		(layer "F.Cu")
 		(net "Net-(D103-K)")
 		(uuid "bd9fc2ec-b594-4837-b521-ba799df2bc4c")
+	)
+	(segment
+		(start 144.75 102.8)
+		(end 144.75 102.1375)
+		(width 0.3)
+		(layer "F.Cu")
+		(net "/+VCORE")
+		(uuid "2b3eb9c2-2a78-42c4-a7cc-a86ffabd787d")
+	)
+	(segment
+		(start 146.1375 100.75)
+		(end 146.275 100.75)
+		(width 0.3)
+		(layer "F.Cu")
+		(net "/+VCORE")
+		(uuid "475aa2ea-a3a4-429d-b81c-618aa60543d9")
+	)
+	(segment
+		(start 144.75 102.1375)
+		(end 146.1375 100.75)
+		(width 0.3)
+		(layer "F.Cu")
+		(net "/+VCORE")
+		(uuid "c80f7a5f-53e5-4f1b-b9a8-86a4b565a750")
 	)
 	(zone
 		(net "GND")
