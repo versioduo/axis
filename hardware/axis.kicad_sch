@@ -9409,7 +9409,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0471926a-3950-43fa-a586-9054138c6e5f")
-		(property "Reference" "#PWR0142"
+		(property "Reference" "#PWR0143"
 			(at 275.59 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9471,7 +9471,7 @@
 		(instances
 			(project "axis"
 				(path "/6c8448b4-b04d-47e1-934e-e40cbe27a7be"
-					(reference "#PWR0142")
+					(reference "#PWR0143")
 					(unit 1)
 				)
 			)
@@ -9983,7 +9983,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0b83b69e-82ba-4508-afe5-55ee4153a1d8")
-		(property "Reference" "#PWR0143"
+		(property "Reference" "#PWR0136"
 			(at 242.57 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -10044,7 +10044,7 @@
 		(instances
 			(project "axis"
 				(path "/6c8448b4-b04d-47e1-934e-e40cbe27a7be"
-					(reference "#PWR0143")
+					(reference "#PWR0136")
 					(unit 1)
 				)
 			)
@@ -10435,7 +10435,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1b4db125-f7d9-4f6b-bb80-8b1c6fdcb409")
-		(property "Reference" "#PWR0139"
+		(property "Reference" "#PWR0140"
 			(at 257.81 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -10496,7 +10496,7 @@
 		(instances
 			(project "axis"
 				(path "/6c8448b4-b04d-47e1-934e-e40cbe27a7be"
-					(reference "#PWR0139")
+					(reference "#PWR0140")
 					(unit 1)
 				)
 			)
@@ -11391,7 +11391,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3964a055-c6a7-4451-8a14-9c03d62eb8ea")
-		(property "Reference" "#PWR0141"
+		(property "Reference" "#PWR0142"
 			(at 275.59 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -11452,7 +11452,7 @@
 		(instances
 			(project "axis"
 				(path "/6c8448b4-b04d-47e1-934e-e40cbe27a7be"
-					(reference "#PWR0141")
+					(reference "#PWR0142")
 					(unit 1)
 				)
 			)
@@ -12011,7 +12011,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "573caf63-d76d-4eaa-9994-9d435aa586b8")
-		(property "Reference" "#PWR0136"
+		(property "Reference" "#PWR0137"
 			(at 252.73 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -12072,7 +12072,7 @@
 		(instances
 			(project "axis"
 				(path "/6c8448b4-b04d-47e1-934e-e40cbe27a7be"
-					(reference "#PWR0136")
+					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
@@ -12783,7 +12783,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "77df6a97-6fb3-4f04-ae90-4acc6d3926a3")
-		(property "Reference" "#PWR0138"
+		(property "Reference" "#PWR0139"
 			(at 242.57 29.21 0)
 			(hide yes)
 			(show_name no)
@@ -12845,7 +12845,7 @@
 		(instances
 			(project "axis"
 				(path "/6c8448b4-b04d-47e1-934e-e40cbe27a7be"
-					(reference "#PWR0138")
+					(reference "#PWR0139")
 					(unit 1)
 				)
 			)
@@ -13380,7 +13380,7 @@
 		(in_pos_files no)
 		(dnp no)
 		(uuid "883e7136-7acf-4910-8a97-3fee8048b523")
-		(property "Reference" "#PWR0137"
+		(property "Reference" "#PWR0138"
 			(at 252.73 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -13440,7 +13440,7 @@
 		(instances
 			(project "axis"
 				(path "/6c8448b4-b04d-47e1-934e-e40cbe27a7be"
-					(reference "#PWR0137")
+					(reference "#PWR0138")
 					(unit 1)
 				)
 			)
@@ -14974,7 +14974,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b8d72967-847b-4ae0-adf9-630b91aaf6ed")
-		(property "Reference" "#PWR0140"
+		(property "Reference" "#PWR0141"
 			(at 267.97 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -15036,7 +15036,7 @@
 		(instances
 			(project "axis"
 				(path "/6c8448b4-b04d-47e1-934e-e40cbe27a7be"
-					(reference "#PWR0140")
+					(reference "#PWR0141")
 					(unit 1)
 				)
 			)
