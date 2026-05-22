@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "V2 axis")
-		(date "2026-04-23")
+		(date "2026-05-19")
 		(rev "2026-01-14")
 		(company "Versio Duo")
 		(comment 1 "Orientation Sensor")
@@ -3402,7 +3402,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "V2_LED:LED_0603"
+			(property "Footprint" "V2_LED:LED_1608"
 				(at 0 -14.986 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -10534,7 +10534,7 @@
 				)
 			)
 		)
-		(property "Footprint" "V2_LED:LED_0603"
+		(property "Footprint" "V2_LED:LED_1608"
 			(at 127 54.61 90)
 			(hide yes)
 			(show_name no)
@@ -10874,7 +10874,7 @@
 		(at 234.95 152.4 90)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
+		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
@@ -10925,17 +10925,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 234.95 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Enable" "0"
 			(at 234.95 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -17871,7 +17860,7 @@
 		(at 176.53 165.1 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim no)
+		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
@@ -17923,17 +17912,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 176.53 165.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Enable" "0"
 			(at 176.53 165.1 0)
 			(hide yes)
 			(show_name no)

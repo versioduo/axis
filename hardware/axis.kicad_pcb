@@ -8,7 +8,7 @@
 	)
 	(paper "A4")
 	(title_block
-		(date "2026-04-14")
+		(date "2026-05-19")
 		(rev "2026-01-14")
 	)
 	(layers
@@ -139,7 +139,7 @@
 			(outputdirectory "axis-gerber")
 		)
 	)
-	(footprint "V2_Resistor_SMD:R_0603"
+	(footprint "V2_Resistor_SMD:R_1608"
 		(layer "F.Cu")
 		(uuid "048038e9-aaf5-436b-a9ee-ef72d5dee760")
 		(at 125 112.75 180)
@@ -198,7 +198,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8344e029-01c8-4f3a-a8e2-26985f6a6d16")
+			(uuid "4b513f1c-aee6-4a12-a1d7-bbb20c3fb6b7")
 			(effects
 				(font
 					(size 1 1)
@@ -211,7 +211,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f6545e90-0b2b-4172-9a90-dfd70b90ef5a")
+			(uuid "f664c1a1-667f-445b-b50f-5db8cb8ddadf")
 			(effects
 				(font
 					(size 1 1)
@@ -224,7 +224,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d4415e39-c52c-403c-b26d-5b0156ef73ab")
+			(uuid "4ed3c824-086d-4c05-935b-a740bac562fe")
 			(effects
 				(font
 					(size 1 1)
@@ -237,7 +237,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "324c7e24-8942-4a75-be35-9fe252b9e61a")
+			(uuid "d318a392-42cd-4b50-97c7-b9b3d3f5f9c9")
 			(effects
 				(font
 					(size 1 1)
@@ -245,12 +245,12 @@
 				)
 			)
 		)
-		(property "Id" "Resistor:0603_5k1"
+		(property "Id" "Resistor:1608_5k1"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "730db655-62ab-48de-97cc-2e8610ba7141")
+			(uuid "ef4e7429-59a4-4c46-94dc-5d1247cd6039")
 			(effects
 				(font
 					(size 1 1)
@@ -600,7 +600,7 @@
 			)
 		)
 	)
-	(footprint "V2_Capacitor_SMD:C_0603"
+	(footprint "V2_Capacitor_SMD:C_1608"
 		(layer "F.Cu")
 		(uuid "0d6e63b8-8623-48f1-b2c8-c8afdb54c640")
 		(at 175.25 109.75)
@@ -659,7 +659,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "854c53ce-22bb-4030-911c-73347923e9bd")
+			(uuid "2c172bf1-9814-403a-b94a-6ef48fb92bd8")
 			(effects
 				(font
 					(size 1 1)
@@ -672,7 +672,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "bf8c120c-043e-4688-8441-9efce165d6fc")
+			(uuid "bf890f7e-a995-4d8a-81cb-f174b212be76")
 			(effects
 				(font
 					(size 1 1)
@@ -685,7 +685,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "78c1713f-b732-46b2-9815-9bd901f02db8")
+			(uuid "2753d0f2-10e0-4a4c-aba3-b221463d0655")
 			(effects
 				(font
 					(size 1 1)
@@ -693,12 +693,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0603_0u47"
+		(property "Id" "Capacitor:1608_0u47"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8ffa24e5-0017-4877-aac0-8bc49b139415")
+			(uuid "3092ab3a-3668-4906-a6a8-5f850e41cdd0")
 			(effects
 				(font
 					(size 1 1)
@@ -711,7 +711,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "681428e3-c18f-48a9-8ef2-c2186b6e1bc2")
+			(uuid "5d138533-3c4c-4f08-869a-cead8f5ed444")
 			(effects
 				(font
 					(size 1 1)
@@ -898,7 +898,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "V2_Resistor_SMD:R_0603"
+	(footprint "V2_Resistor_SMD:R_1608"
 		(layer "F.Cu")
 		(uuid "171889f1-d711-4c52-9ede-2050297bbe6f")
 		(at 175.25 102.75)
@@ -957,7 +957,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "dc074a0e-04ff-4f8d-b182-7e323555f355")
+			(uuid "a4ef5bcf-080e-48ce-af23-4b0bdf0098d7")
 			(effects
 				(font
 					(size 1 1)
@@ -970,7 +970,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6a53a638-891c-4475-afe4-e6adf350b438")
+			(uuid "642b3613-9cd7-4e26-9590-e49c45d96fda")
 			(effects
 				(font
 					(size 1 1)
@@ -983,7 +983,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6b873d72-c371-4922-a4ca-bc8a569dea0c")
+			(uuid "f9823515-e117-419f-91cb-c2289107e1a6")
 			(effects
 				(font
 					(size 1 1)
@@ -996,7 +996,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9b7362b9-a6cc-4e9d-9183-8ac2538b72f0")
+			(uuid "57170de9-5473-4cda-81e7-30cd62fb2ec7")
 			(effects
 				(font
 					(size 1 1)
@@ -1004,12 +1004,12 @@
 				)
 			)
 		)
-		(property "Id" "Resistor:0603_2k7"
+		(property "Id" "Resistor:1608_2k7"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "952cf96d-b379-42ad-8c53-5f1a17880601")
+			(uuid "49b45be7-7006-42fb-b736-d661c2793590")
 			(effects
 				(font
 					(size 1 1)
@@ -2699,7 +2699,7 @@
 			)
 		)
 	)
-	(footprint "V2_Capacitor_SMD:C_0603"
+	(footprint "V2_Capacitor_SMD:C_1608"
 		(layer "F.Cu")
 		(uuid "2a79a3b8-79f5-45d4-9495-f5b7d7917c5f")
 		(at 135.25 104.25 180)
@@ -2758,7 +2758,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2ae01a92-167d-4661-84d1-ee246518630f")
+			(uuid "1d9ed3b7-cc0f-48b7-8491-45f1ffda5bd1")
 			(effects
 				(font
 					(size 1 1)
@@ -2771,7 +2771,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "41f00f0f-d236-4ed3-90f6-9a600acf624a")
+			(uuid "0a94330f-7270-4333-8a48-282172833258")
 			(effects
 				(font
 					(size 1 1)
@@ -2784,7 +2784,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "efe734db-b1f8-4b21-a31d-01063ef358d5")
+			(uuid "a59c6a06-7f9b-45e1-b808-8d5fe032764f")
 			(effects
 				(font
 					(size 1 1)
@@ -2792,12 +2792,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0603_18p"
+		(property "Id" "Capacitor:1608_18p"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "089d8213-1fcb-43fd-8439-b17ad59faad3")
+			(uuid "6b592e57-a6bf-43b2-b3e4-f6856cec9e50")
 			(effects
 				(font
 					(size 1 1)
@@ -2810,7 +2810,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "630eae74-1df1-4959-9aa9-b9330a1e07e2")
+			(uuid "0f448e96-dee1-430f-9288-97773dbab1f8")
 			(effects
 				(font
 					(size 1 1)
@@ -3170,7 +3170,7 @@
 			)
 		)
 	)
-	(footprint "V2_Capacitor_SMD:C_0603"
+	(footprint "V2_Capacitor_SMD:C_1608"
 		(layer "F.Cu")
 		(uuid "3327fbd9-1945-438f-8880-6448279d37cd")
 		(at 172 109.75 180)
@@ -3229,7 +3229,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6b0920a3-8f57-4a09-a0f6-d1fbeadfd0d9")
+			(uuid "2aed901c-4b00-40a8-b6e3-b9e822eb1e22")
 			(effects
 				(font
 					(size 1 1)
@@ -3242,7 +3242,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2fa2b1f5-5320-489a-bd20-5c7414161f98")
+			(uuid "379180ee-f068-4bac-abdd-60b5111b9c7b")
 			(effects
 				(font
 					(size 1 1)
@@ -3255,7 +3255,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "06ab4128-41cf-4217-93b8-1cad29cba832")
+			(uuid "7c96494b-8686-49a7-b54d-9dfb116b273a")
 			(effects
 				(font
 					(size 1 1)
@@ -3268,7 +3268,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2f32cb8a-54e5-4646-aa7b-aa627e5eb62a")
+			(uuid "ce906393-c4ad-4f62-b251-15aa82f695bf")
 			(effects
 				(font
 					(size 1 1)
@@ -3276,12 +3276,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0603_1u"
+		(property "Id" "Capacitor:1608_1u"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3567de86-8861-4338-a63f-cebe6f92f099")
+			(uuid "b1aa3c75-6887-4083-9695-14e25b51aeb6")
 			(effects
 				(font
 					(size 1 1)
@@ -3397,7 +3397,7 @@
 			)
 		)
 	)
-	(footprint "V2_Capacitor_SMD:C_0603"
+	(footprint "V2_Capacitor_SMD:C_1608"
 		(layer "F.Cu")
 		(uuid "3610d74b-2341-4403-865d-0ee6e593454a")
 		(at 175.25 111.75 180)
@@ -3456,7 +3456,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "299723fc-babc-47b9-96fe-c5478db294af")
+			(uuid "74f65816-6bbe-4f61-945f-440000cbd8cc")
 			(effects
 				(font
 					(size 1 1)
@@ -3469,7 +3469,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6f132c5c-8e7e-450e-8c07-5a56fb3a7af1")
+			(uuid "1984d40e-0247-4f26-947e-1281da713f49")
 			(effects
 				(font
 					(size 1 1)
@@ -3482,7 +3482,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1e73cd8c-ac4f-45eb-99fd-0d93975b19ef")
+			(uuid "d58cb714-d2c9-423d-a30e-9c3fff2019aa")
 			(effects
 				(font
 					(size 1 1)
@@ -3495,7 +3495,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ead4ec0e-4bb4-4a70-9a9c-ded2aac7da3c")
+			(uuid "02f577ea-7801-4593-b6e2-250d585687a4")
 			(effects
 				(font
 					(size 1 1)
@@ -3503,12 +3503,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0603_10u"
+		(property "Id" "Capacitor:1608_10u"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "c3546372-5832-4e7f-a73e-024136de91de")
+			(uuid "c61c0cc0-3eb2-4821-bcc9-d8068c7ff930")
 			(effects
 				(font
 					(size 1 1)
@@ -5281,7 +5281,7 @@
 			)
 		)
 	)
-	(footprint "V2_Capacitor_SMD:C_0603"
+	(footprint "V2_Capacitor_SMD:C_1608"
 		(layer "F.Cu")
 		(uuid "370b9242-3b23-4ac0-9dda-194e92ff462b")
 		(at 138.5 106.75 90)
@@ -5340,7 +5340,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d38ac88c-c0fe-41de-baee-05c494e181b9")
+			(uuid "738f040f-24b0-4e9c-8a00-897b9f8c705e")
 			(effects
 				(font
 					(size 1 1)
@@ -5353,7 +5353,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "83adaf6d-2643-47d4-b548-281d298d0253")
+			(uuid "081d6bb1-7770-4b99-afb9-92d53ea163b9")
 			(effects
 				(font
 					(size 1 1)
@@ -5366,7 +5366,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fd1d6570-509c-41ac-9008-8fc2cdc3dac9")
+			(uuid "d9ac77a4-22d6-4159-b4eb-1a72832381e2")
 			(effects
 				(font
 					(size 1 1)
@@ -5379,7 +5379,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f55ea5e3-a386-4034-8566-6bb057f1c8c4")
+			(uuid "c7dbeb58-9575-4422-a118-48f61259102a")
 			(effects
 				(font
 					(size 1 1)
@@ -5387,12 +5387,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0603_1u"
+		(property "Id" "Capacitor:1608_1u"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2051e2b4-d027-429b-a2e2-e6c9ebc6eab0")
+			(uuid "9dad4d76-1664-4937-b6d8-cd0728bd4775")
 			(effects
 				(font
 					(size 1 1)
@@ -5603,7 +5603,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "V2_Resistor_SMD:R_0603"
+	(footprint "V2_Resistor_SMD:R_1608"
 		(layer "F.Cu")
 		(uuid "39bb0b47-85f7-4346-a60c-a41cdb0b5878")
 		(at 125 99.75 180)
@@ -5662,7 +5662,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8cfb6b90-65fe-40b1-8b69-d8c72a85379e")
+			(uuid "60ef2da4-bc8a-42fc-91a2-893146e2f9e6")
 			(effects
 				(font
 					(size 1 1)
@@ -5675,7 +5675,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f47bd00f-1eb8-422d-b9ad-84e095830c89")
+			(uuid "ec46d032-0bad-42b8-aeb3-523f416e86db")
 			(effects
 				(font
 					(size 1 1)
@@ -5688,7 +5688,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "88952500-71a0-4809-a786-248c5af8ca3d")
+			(uuid "f064eec8-ca31-4722-974f-b8db0b3227db")
 			(effects
 				(font
 					(size 1 1)
@@ -5701,7 +5701,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "70ea07bb-6ecf-4883-898a-d567c7f6e120")
+			(uuid "754f25ea-59b3-419b-8a2f-85141dd0de09")
 			(effects
 				(font
 					(size 1 1)
@@ -5709,12 +5709,12 @@
 				)
 			)
 		)
-		(property "Id" "Resistor:0603_5k1"
+		(property "Id" "Resistor:1608_5k1"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d36e6438-cf12-4483-b8e6-ec3345277abd")
+			(uuid "3c358e19-6eb1-40ce-9fb9-1b5b46580279")
 			(effects
 				(font
 					(size 1 1)
@@ -6186,7 +6186,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "V2_Capacitor_SMD:C_0603"
+	(footprint "V2_Capacitor_SMD:C_1608"
 		(layer "F.Cu")
 		(uuid "4e1ab487-6719-4a58-b146-57383517ee32")
 		(at 150.25 102.75)
@@ -6245,7 +6245,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8ac3ed29-afa3-4eb4-8758-337c846f4203")
+			(uuid "3c6cac81-da39-4389-9f14-df809308759d")
 			(effects
 				(font
 					(size 1 1)
@@ -6258,7 +6258,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "03a82b29-fe00-48bf-962d-af6b3d95b9de")
+			(uuid "cc2729d2-1799-41aa-8be2-d3d21282bbf8")
 			(effects
 				(font
 					(size 1 1)
@@ -6271,7 +6271,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "20f84643-9cdd-4c6c-bf7c-017460e73fb1")
+			(uuid "55d19356-fda2-41f0-b47f-d39a70c69f70")
 			(effects
 				(font
 					(size 1 1)
@@ -6284,7 +6284,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "64ad98c9-dc8b-400c-b5d3-dd0e30a78010")
+			(uuid "70879e7f-89a4-49fb-ae1a-af4cb8095f35")
 			(effects
 				(font
 					(size 1 1)
@@ -6292,12 +6292,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0603_1u"
+		(property "Id" "Capacitor:1608_1u"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "31e07f53-a585-4c75-8390-ffb983738198")
+			(uuid "237558ac-e4bc-4bf9-9106-30f2dc2a9446")
 			(effects
 				(font
 					(size 1 1)
@@ -6696,7 +6696,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "V2_Capacitor_SMD:C_0603"
+	(footprint "V2_Capacitor_SMD:C_1608"
 		(layer "F.Cu")
 		(uuid "5712071a-bbae-48ba-a6ff-9ab9685355f5")
 		(at 144 111.5)
@@ -6755,7 +6755,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2d5d53dd-35d9-4830-a07e-b0b8e5534ff8")
+			(uuid "548bf90e-abd1-4910-bd1c-4ee24b63cc91")
 			(effects
 				(font
 					(size 1 1)
@@ -6768,7 +6768,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "61937480-e71c-4fdd-90b9-6c57de05eee1")
+			(uuid "8910e8b4-6099-4561-9f40-ff4631f38d15")
 			(effects
 				(font
 					(size 1 1)
@@ -6781,7 +6781,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e3d3add7-96d3-4414-9c07-c9960d1ecd0f")
+			(uuid "b3486193-dcc7-4377-8bf4-0665462962c9")
 			(effects
 				(font
 					(size 1 1)
@@ -6794,7 +6794,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "46706890-9f03-4669-8f1e-72111543e0a4")
+			(uuid "55657656-2fb2-4245-8446-10550a390a4a")
 			(effects
 				(font
 					(size 1 1)
@@ -6802,12 +6802,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0603_1u"
+		(property "Id" "Capacitor:1608_1u"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d1967d64-b1c2-4a0f-bc69-c10aa93c555a")
+			(uuid "8daa5c0d-57b6-4dee-8c08-47bd4ebd4f26")
 			(effects
 				(font
 					(size 1 1)
@@ -7157,7 +7157,7 @@
 			)
 		)
 	)
-	(footprint "V2_Capacitor_SMD:C_0603"
+	(footprint "V2_Capacitor_SMD:C_1608"
 		(layer "F.Cu")
 		(uuid "5c35967e-0d60-445d-aa38-8d09a7f29379")
 		(at 135.25 102.25 180)
@@ -7216,7 +7216,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3f21c456-49cb-4b9b-bb06-af9623face4b")
+			(uuid "fdf044b2-2364-4d7e-a5c1-88794fc56f93")
 			(effects
 				(font
 					(size 1 1)
@@ -7229,7 +7229,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "43dd427c-b0c9-4d25-ac1b-0d9527c32cb9")
+			(uuid "ee907f09-d5f1-44fa-8f1a-010cb2e452ee")
 			(effects
 				(font
 					(size 1 1)
@@ -7242,7 +7242,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0f7bf47c-14c7-4d06-851a-ab88d54e4418")
+			(uuid "280529ca-cde0-4c98-bcef-c2eb3b16c633")
 			(effects
 				(font
 					(size 1 1)
@@ -7250,12 +7250,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0603_18p"
+		(property "Id" "Capacitor:1608_18p"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "91ae389e-744f-438e-b4a2-df04b6e3ef86")
+			(uuid "211ffe02-45f8-4e1d-9603-5e8e6f032472")
 			(effects
 				(font
 					(size 1 1)
@@ -7268,7 +7268,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "380cf15e-b246-41ed-b29b-9736a7190167")
+			(uuid "32e6f0a3-bb47-4e88-8eeb-2e629ecd0d2b")
 			(effects
 				(font
 					(size 1 1)
@@ -7384,7 +7384,7 @@
 			)
 		)
 	)
-	(footprint "V2_Capacitor_SMD:C_0805"
+	(footprint "V2_Capacitor_SMD:C_2012"
 		(layer "F.Cu")
 		(uuid "61446eae-1aac-4eb1-a68b-22b4efd413f5")
 		(at 138.5 111.25 90)
@@ -7443,7 +7443,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d83d685b-a859-455b-be5d-dec3cc5c9842")
+			(uuid "ff5a6f76-04db-43bd-b676-68319e1ee21c")
 			(effects
 				(font
 					(size 1 1)
@@ -7456,7 +7456,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "797b8598-4e27-4b50-bcc2-a10f9f3af96a")
+			(uuid "5ca74f81-fe23-48b4-adfb-5e4ef2527f3d")
 			(effects
 				(font
 					(size 1 1)
@@ -7469,7 +7469,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a5a40b2a-0958-429a-b67f-72ae25f26bfa")
+			(uuid "c9ef33b9-ac3c-4231-bf59-5e2b2c29f102")
 			(effects
 				(font
 					(size 1 1)
@@ -7482,7 +7482,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6546bf37-f60a-4b11-8ea1-9c3cf997efcf")
+			(uuid "bd77ac5c-c40e-4d42-8100-ed1764635a3a")
 			(effects
 				(font
 					(size 1 1)
@@ -7490,12 +7490,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0805_10u"
+		(property "Id" "Capacitor:2012_10u"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "275d05ec-6077-403b-ba24-513d3a525a81")
+			(uuid "a0dfb1bb-215d-4db8-9bac-9173e1187579")
 			(effects
 				(font
 					(size 1 1)
@@ -7611,7 +7611,7 @@
 			)
 		)
 	)
-	(footprint "V2_Resistor_SMD:R_0603"
+	(footprint "V2_Resistor_SMD:R_1608"
 		(layer "F.Cu")
 		(uuid "6e567bfb-ecd7-4923-9cbe-df3d80714ae6")
 		(at 150.25 100.75)
@@ -7670,7 +7670,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f5149d44-1411-4dcb-af2b-81f5ac622900")
+			(uuid "9f6b465e-ad79-416c-95ce-d006b11affcd")
 			(effects
 				(font
 					(size 1 1)
@@ -7683,7 +7683,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f6223a0f-3aee-4b93-8525-d42cdd202640")
+			(uuid "b94d51ca-9fd1-4878-8b91-3d9c274e1ced")
 			(effects
 				(font
 					(size 1 1)
@@ -7696,7 +7696,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0eb4d205-d646-4e1c-8cfe-b67b77697c48")
+			(uuid "0a08bef7-bff7-4535-af3d-a959682ac759")
 			(effects
 				(font
 					(size 1 1)
@@ -7709,7 +7709,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "c27d4aa2-8a2d-48f2-a6b2-e845eecfc116")
+			(uuid "13d97256-d377-4644-a8f7-ef8725682b8b")
 			(effects
 				(font
 					(size 1 1)
@@ -7717,12 +7717,12 @@
 				)
 			)
 		)
-		(property "Id" "Resistor:0603_100k"
+		(property "Id" "Resistor:1608_100k"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6dc150db-5889-4309-8c13-91797cbd3bcd")
+			(uuid "337bb2b8-6998-402f-8f93-88de96abadde")
 			(effects
 				(font
 					(size 1 1)
@@ -8304,7 +8304,7 @@
 			)
 		)
 	)
-	(footprint "V2_Capacitor_SMD:C_0603"
+	(footprint "V2_Capacitor_SMD:C_1608"
 		(layer "F.Cu")
 		(uuid "89f6fff8-8428-40f4-aaf1-af9e4db2970c")
 		(at 145.5 100.75 180)
@@ -8363,7 +8363,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "57dba2cc-75b8-468c-b1fe-56307e759342")
+			(uuid "945deabb-9330-4e9d-b3b9-3942fbc5f79e")
 			(effects
 				(font
 					(size 1 1)
@@ -8376,7 +8376,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "46caa713-e1b3-4409-8eea-c547b38d1355")
+			(uuid "8db063ae-d6e9-47a6-86ce-601469fa9c76")
 			(effects
 				(font
 					(size 1 1)
@@ -8389,7 +8389,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "83beeb1d-b08e-4136-9193-f397b7a17ee1")
+			(uuid "375e4c9a-c414-4111-b446-174081d5c86e")
 			(effects
 				(font
 					(size 1 1)
@@ -8402,7 +8402,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "821e6bf3-4a5a-4ee0-9bc1-f024189d9998")
+			(uuid "0d914110-b872-44a7-a7c7-8d7bab12d833")
 			(effects
 				(font
 					(size 1 1)
@@ -8410,12 +8410,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0603_10u"
+		(property "Id" "Capacitor:1608_10u"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8bb73523-70a5-430b-a7bf-95794d3bd958")
+			(uuid "eac63a1a-4344-4b45-b0d1-7b8f59a5ae60")
 			(effects
 				(font
 					(size 1 1)
@@ -8531,7 +8531,7 @@
 			)
 		)
 	)
-	(footprint "V2_Resistor_SMD:R_0603"
+	(footprint "V2_Resistor_SMD:R_1608"
 		(layer "F.Cu")
 		(uuid "98d41632-e66f-44d7-a8a7-72120e9905b5")
 		(at 163.5 101.25)
@@ -8590,7 +8590,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b950ff48-b063-4892-93ca-c8af35a25350")
+			(uuid "2e12aa72-7199-434b-9b64-fd758798c837")
 			(effects
 				(font
 					(size 1 1)
@@ -8603,7 +8603,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "c9bdf7d0-a63f-43bd-91f1-dd07f2befdd8")
+			(uuid "d18165ac-1413-4333-9f86-01daeb474077")
 			(effects
 				(font
 					(size 1 1)
@@ -8616,7 +8616,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "565085c8-1389-4435-801e-9fa84a1fef38")
+			(uuid "e78edaa4-d903-4cca-9ef4-c2c8c2696258")
 			(effects
 				(font
 					(size 1 1)
@@ -8629,7 +8629,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "bc47b2fc-dccd-4ec8-b2f2-95ad2bd0580e")
+			(uuid "670b1850-9ca4-43a8-aecb-15f9d1123396")
 			(effects
 				(font
 					(size 1 1)
@@ -8637,12 +8637,12 @@
 				)
 			)
 		)
-		(property "Id" "Resistor:0603_2k7"
+		(property "Id" "Resistor:1608_2k7"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0bdee134-c4fa-46cc-b31d-e3d547968074")
+			(uuid "e545998f-d4d0-43b0-9ce7-42207c839a98")
 			(effects
 				(font
 					(size 1 1)
@@ -9560,7 +9560,7 @@
 			)
 		)
 	)
-	(footprint "V2_Resistor_SMD:R_0603"
+	(footprint "V2_Resistor_SMD:R_1608"
 		(layer "F.Cu")
 		(uuid "bf0c66d8-e85d-4e63-9c1d-85bf51395012")
 		(at 158.75 100.5 180)
@@ -9619,7 +9619,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9c02a12c-62ed-4943-a013-b066de95c210")
+			(uuid "fda84db1-23b3-472f-aa91-bfd1864b64d5")
 			(effects
 				(font
 					(size 1 1)
@@ -9632,7 +9632,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9c47738f-bda2-420f-aeb6-f7f5c1481b28")
+			(uuid "b0a0748e-655e-4ffa-90fd-153677ae9289")
 			(effects
 				(font
 					(size 1 1)
@@ -9645,7 +9645,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "bbc2ecd9-0289-44b7-96b1-3c10b3cecf7a")
+			(uuid "a99ed000-8ae0-4f1e-8fc9-35fa0f1505a5")
 			(effects
 				(font
 					(size 1 1)
@@ -9658,7 +9658,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d91c3242-b2eb-4a64-bff3-609e1c2c0d67")
+			(uuid "16d06e56-cd34-4493-837e-99e3445cac01")
 			(effects
 				(font
 					(size 1 1)
@@ -9666,12 +9666,12 @@
 				)
 			)
 		)
-		(property "Id" "Resistor:0603_330R"
+		(property "Id" "Resistor:1608_330R"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6c70afd8-5795-4a72-858a-4e09286ddcb2")
+			(uuid "2c317fac-cd55-4f47-85c5-011b863fe806")
 			(effects
 				(font
 					(size 1 1)
@@ -9787,7 +9787,7 @@
 			)
 		)
 	)
-	(footprint "V2_Resistor_SMD:R_0603"
+	(footprint "V2_Resistor_SMD:R_1608"
 		(layer "F.Cu")
 		(uuid "cbfb94e5-f2a5-4c8b-9a96-913700e8f508")
 		(at 178.75 102.75 180)
@@ -9846,7 +9846,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "232c6699-2708-4f3c-bd74-5c8cd3693128")
+			(uuid "51df82d5-dd10-4780-8cc8-d421b30ee5b7")
 			(effects
 				(font
 					(size 1 1)
@@ -9859,7 +9859,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "af44df8f-a9d3-49d0-9bed-a9c5427dad86")
+			(uuid "49f3f249-c203-4332-9c78-d880ba3130df")
 			(effects
 				(font
 					(size 1 1)
@@ -9872,7 +9872,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f234e033-38c8-46f2-8b3a-89093d0a51ff")
+			(uuid "e4de6a2f-794d-4c70-9e6a-7f32a407a0b5")
 			(effects
 				(font
 					(size 1 1)
@@ -9885,7 +9885,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6fa1d422-5dc4-4ac6-b887-b84c0440d1df")
+			(uuid "a7b2a36e-9ecd-4b43-9084-d35711002537")
 			(effects
 				(font
 					(size 1 1)
@@ -9893,12 +9893,12 @@
 				)
 			)
 		)
-		(property "Id" "Resistor:0603_2k7"
+		(property "Id" "Resistor:1608_2k7"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "41285934-030a-4f87-92aa-a001b6024206")
+			(uuid "a4e45123-c4d1-4cdf-afe9-9f65af9c8e3e")
 			(effects
 				(font
 					(size 1 1)
@@ -10014,7 +10014,7 @@
 			)
 		)
 	)
-	(footprint "V2_Capacitor_SMD:C_0603"
+	(footprint "V2_Capacitor_SMD:C_1608"
 		(layer "F.Cu")
 		(uuid "d23243c6-67b0-4c0b-be86-116ac0655024")
 		(at 142 100.75 180)
@@ -10073,7 +10073,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d2f47e4f-4e7e-40cb-a6ff-07d83dcbb115")
+			(uuid "6c3f978a-27ea-4ff4-bb87-4f4cc073b2d4")
 			(effects
 				(font
 					(size 1 1)
@@ -10086,7 +10086,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "bac99f14-ca33-4c7b-8c01-763d3133a95f")
+			(uuid "f6caf585-5b53-4321-b55e-700846a7116d")
 			(effects
 				(font
 					(size 1 1)
@@ -10099,7 +10099,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3645012d-9365-4b93-9ba1-e597678a5bfd")
+			(uuid "4297041c-6bd1-404b-85b2-a8dc17816961")
 			(effects
 				(font
 					(size 1 1)
@@ -10112,7 +10112,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0f4128c6-ed44-45dc-b698-553630ca80a2")
+			(uuid "9b6ea2b6-3b2a-444b-8cdb-40095afbaaab")
 			(effects
 				(font
 					(size 1 1)
@@ -10120,12 +10120,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0603_1u"
+		(property "Id" "Capacitor:1608_1u"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "63c49638-38a1-4619-990c-a863f1a828c1")
+			(uuid "b54e45e3-cab6-4244-8ecb-cb7d72900ed8")
 			(effects
 				(font
 					(size 1 1)
@@ -10530,7 +10530,7 @@
 			)
 		)
 	)
-	(footprint "V2_LED:LED_0603"
+	(footprint "V2_LED:LED_1608"
 		(layer "F.Cu")
 		(uuid "dc7f409a-1e08-41c0-97e1-9f1ec740a119")
 		(at 158.75 102 180)
@@ -10589,7 +10589,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3a34d522-85c9-455d-8e07-9a4e6d16e619")
+			(uuid "03fc3b95-a572-493d-a6f1-a75d033e2f7e")
 			(effects
 				(font
 					(size 1 1)
@@ -10602,7 +10602,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "83dd815c-db7d-440b-b80b-51c89563a6ed")
+			(uuid "c4f1d8fc-46eb-44ff-a292-07d25cade05d")
 			(effects
 				(font
 					(size 1 1)
@@ -10615,7 +10615,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "faf24885-4392-46a1-8f10-3549f8eea6d8")
+			(uuid "1dfea679-53fa-41e6-a10b-0139bb987bf5")
 			(effects
 				(font
 					(size 1 1)
@@ -10628,7 +10628,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fd7694a7-138e-46a1-b50c-bd238891f1aa")
+			(uuid "e9c3a059-e73d-4eb5-9259-28a557981ad2")
 			(effects
 				(font
 					(size 1 1)
@@ -10636,12 +10636,12 @@
 				)
 			)
 		)
-		(property "Id" "LED:0603_Orange"
+		(property "Id" "LED:1608_Orange"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "cf1e9de0-0984-4c77-a505-99eda2694df3")
+			(uuid "c3ebf557-70b5-4b7f-83a4-33ce0fa19a66")
 			(effects
 				(font
 					(size 1 1)
@@ -10654,7 +10654,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e811c88f-34a2-47ad-934d-8d6cf3b517e6")
+			(uuid "800c48f7-8011-44ce-924a-a823b3626723")
 			(effects
 				(font
 					(size 1 1)
@@ -11920,7 +11920,7 @@
 			)
 		)
 	)
-	(footprint "V2_Resistor_SMD:R_0603"
+	(footprint "V2_Resistor_SMD:R_1608"
 		(layer "F.Cu")
 		(uuid "eeceebf0-fd32-40cc-950d-bf9db133de74")
 		(at 163.5 103.25)
@@ -11979,7 +11979,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e479c95a-14c5-4372-9a14-2cf0a3ed2077")
+			(uuid "2b1c1536-066a-416c-84e1-18a9efa0536a")
 			(effects
 				(font
 					(size 1 1)
@@ -11992,7 +11992,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6181a905-a8f9-489f-a0d8-9be4445c3e8e")
+			(uuid "3aea32aa-dab3-4a9c-808a-3a477c39822f")
 			(effects
 				(font
 					(size 1 1)
@@ -12005,7 +12005,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "26ec42cc-536c-4139-a30f-5546c45c384a")
+			(uuid "62909af9-0211-4493-95be-5c528ad6b78f")
 			(effects
 				(font
 					(size 1 1)
@@ -12018,7 +12018,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "828388e8-fd9b-4b18-bf0f-99430b2cf774")
+			(uuid "065597d1-53bc-484c-8416-c4ed3ce11823")
 			(effects
 				(font
 					(size 1 1)
@@ -12026,12 +12026,12 @@
 				)
 			)
 		)
-		(property "Id" "Resistor:0603_2k7"
+		(property "Id" "Resistor:1608_2k7"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f1c81b0d-3c40-42df-9fb5-3d417038a3b9")
+			(uuid "f4ddf9ff-a522-4f9c-8894-2f59822ae3c5")
 			(effects
 				(font
 					(size 1 1)
@@ -12242,7 +12242,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "V2_Capacitor_SMD:C_0805"
+	(footprint "V2_Capacitor_SMD:C_2012"
 		(layer "F.Cu")
 		(uuid "fadd96d9-e2e8-4fe1-8325-ab3957724006")
 		(at 132 111.25 90)
@@ -12301,7 +12301,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "02c8f102-7cc7-4f00-965c-c6afbf4fd19f")
+			(uuid "7f9a4ff6-092e-48ff-8a78-e976e29703a2")
 			(effects
 				(font
 					(size 1 1)
@@ -12314,7 +12314,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e2f9375d-b1a2-440a-9190-c36f393c0471")
+			(uuid "0a6daba2-7f90-430a-aed4-938a4721356d")
 			(effects
 				(font
 					(size 1 1)
@@ -12327,7 +12327,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f9f64462-21c5-4c37-adac-b50f470e75c8")
+			(uuid "d0c9a2eb-0cc9-4a22-940d-9eb71a268287")
 			(effects
 				(font
 					(size 1 1)
@@ -12340,7 +12340,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0c66ce70-5f8f-4b17-9aad-db7504f3a020")
+			(uuid "2e217799-b14d-4f6c-a4fe-8e0832a5fbd0")
 			(effects
 				(font
 					(size 1 1)
@@ -12348,12 +12348,12 @@
 				)
 			)
 		)
-		(property "Id" "Capacitor:0805_10u"
+		(property "Id" "Capacitor:2012_10u"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "da076c4d-7fce-4e4c-bf2f-a3c3c244adaf")
+			(uuid "c9559358-670c-4fbc-b60a-2d80d3badcbe")
 			(effects
 				(font
 					(size 1 1)
@@ -18840,6 +18840,43 @@
 		(net "GND")
 		(layer "F.Cu")
 		(hatch none 0.1)
+		(priority 30029)
+		(attr
+			(teardrop
+				(type padvia)
+			)
+		)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.0254)
+		(fill yes
+			(island_removal_mode 1)
+		)
+		(polygon
+			(pts
+				(xy 139.499058 105.625) (xy 139.542474 105.629861) (xy 139.569912 105.64389) (xy 139.585575 105.656688)
+				(xy 139.624997 105.687081) (xy 139.755323 105.5) (xy 139.624997 105.312919) (xy 139.585575 105.343312)
+				(xy 139.551875 105.366768) (xy 139.499058 105.375)
+			)
+		)
+		(filled_polygon
+			(layer "F.Cu")
+			(pts
+				(xy 139.631681 105.322538) (xy 139.632015 105.322994) (xy 139.750663 105.493312) (xy 139.75258 105.502059)
+				(xy 139.750663 105.506688) (xy 139.632015 105.677005) (xy 139.624474 105.681834) (xy 139.615727 105.679917)
+				(xy 139.615281 105.67959) (xy 139.585666 105.656758) (xy 139.585471 105.656603) (xy 139.577967 105.650472)
+				(xy 139.569913 105.64389) (xy 139.542474 105.629861) (xy 139.542475 105.629861) (xy 139.509456 105.626164)
+				(xy 139.501616 105.621838) (xy 139.499058 105.614537) (xy 139.499058 105.385017) (xy 139.502485 105.376744)
+				(xy 139.508955 105.373457) (xy 139.551875 105.366768) (xy 139.585575 105.343312) (xy 139.615273 105.320415)
+				(xy 139.623915 105.318079)
+			)
+		)
+	)
+	(zone
+		(net "GND")
+		(layer "F.Cu")
+		(hatch none 0.1)
 		(priority 30032)
 		(attr
 			(teardrop
@@ -18933,43 +18970,6 @@
 				(xy 139.94573 105.676532) (xy 139.805866 105.717196) (xy 139.796965 105.716215) (xy 139.791365 105.709227)
 				(xy 139.791181 105.708508) (xy 139.745245 105.502547) (xy 139.745245 105.497453) (xy 139.791266 105.291107)
 				(xy 139.79641 105.283781) (xy 139.805231 105.282238)
-			)
-		)
-	)
-	(zone
-		(net "GND")
-		(layer "F.Cu")
-		(hatch none 0.1)
-		(priority 30029)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(fill yes
-			(island_removal_mode 1)
-		)
-		(polygon
-			(pts
-				(xy 139.499058 105.625) (xy 139.542474 105.629861) (xy 139.569912 105.64389) (xy 139.585575 105.656688)
-				(xy 139.624997 105.687081) (xy 139.755323 105.5) (xy 139.624997 105.312919) (xy 139.585575 105.343312)
-				(xy 139.551875 105.366768) (xy 139.499058 105.375)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 139.631681 105.322538) (xy 139.632015 105.322994) (xy 139.750663 105.493312) (xy 139.75258 105.502059)
-				(xy 139.750663 105.506688) (xy 139.632015 105.677005) (xy 139.624474 105.681834) (xy 139.615727 105.679917)
-				(xy 139.615281 105.67959) (xy 139.585666 105.656758) (xy 139.585471 105.656603) (xy 139.577967 105.650472)
-				(xy 139.569913 105.64389) (xy 139.542474 105.629861) (xy 139.542475 105.629861) (xy 139.509456 105.626164)
-				(xy 139.501616 105.621838) (xy 139.499058 105.614537) (xy 139.499058 105.385017) (xy 139.502485 105.376744)
-				(xy 139.508955 105.373457) (xy 139.551875 105.366768) (xy 139.585575 105.343312) (xy 139.615273 105.320415)
-				(xy 139.623915 105.318079)
 			)
 		)
 	)
@@ -20129,43 +20129,6 @@
 		(net "GND")
 		(layer "F.Cu")
 		(hatch none 0.1)
-		(priority 30001)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(fill yes
-			(island_removal_mode 1)
-		)
-		(polygon
-			(pts
-				(xy 144.4 102.445677) (xy 144.404725 102.331788) (xy 144.417796 102.253944) (xy 144.432926 102.197771)
-				(xy 144.470677 102.043895) (xy 144.25 101.994677) (xy 144.029323 102.043895) (xy 144.067075 102.197773)
-				(xy 144.091021 102.298464) (xy 144.1 102.445677)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 144.459014 102.041293) (xy 144.466342 102.046438) (xy 144.467885 102.055259) (xy 144.467829 102.0555)
-				(xy 144.432953 102.197659) (xy 144.432887 102.197914) (xy 144.417798 102.253931) (xy 144.417791 102.253966)
-				(xy 144.404726 102.331775) (xy 144.404724 102.331794) (xy 144.400465 102.434462) (xy 144.396698 102.442586)
-				(xy 144.388775 102.445677) (xy 144.111008 102.445677) (xy 144.102735 102.44225) (xy 144.09933 102.434689)
-				(xy 144.091022 102.298472) (xy 144.091021 102.298469) (xy 144.091021 102.298464) (xy 144.067075 102.197773)
-				(xy 144.03217 102.055499) (xy 144.033527 102.046648) (xy 144.040745 102.041349) (xy 144.040902 102.041312)
-				(xy 144.247453 101.995245) (xy 144.252547 101.995245)
-			)
-		)
-	)
-	(zone
-		(net "GND")
-		(layer "F.Cu")
-		(hatch none 0.1)
 		(priority 30000)
 		(attr
 			(teardrop
@@ -20196,6 +20159,43 @@
 				(xy 144.03217 101.944499) (xy 144.067075 101.802228) (xy 144.067093 101.802156) (xy 144.082204 101.746053)
 				(xy 144.095275 101.66821) (xy 144.099535 101.565538) (xy 144.103302 101.557414) (xy 144.111225 101.554323)
 				(xy 144.388992 101.554323)
+			)
+		)
+	)
+	(zone
+		(net "GND")
+		(layer "F.Cu")
+		(hatch none 0.1)
+		(priority 30001)
+		(attr
+			(teardrop
+				(type padvia)
+			)
+		)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.0254)
+		(fill yes
+			(island_removal_mode 1)
+		)
+		(polygon
+			(pts
+				(xy 144.4 102.445677) (xy 144.404725 102.331788) (xy 144.417796 102.253944) (xy 144.432926 102.197771)
+				(xy 144.470677 102.043895) (xy 144.25 101.994677) (xy 144.029323 102.043895) (xy 144.067075 102.197773)
+				(xy 144.091021 102.298464) (xy 144.1 102.445677)
+			)
+		)
+		(filled_polygon
+			(layer "F.Cu")
+			(pts
+				(xy 144.459014 102.041293) (xy 144.466342 102.046438) (xy 144.467885 102.055259) (xy 144.467829 102.0555)
+				(xy 144.432953 102.197659) (xy 144.432887 102.197914) (xy 144.417798 102.253931) (xy 144.417791 102.253966)
+				(xy 144.404726 102.331775) (xy 144.404724 102.331794) (xy 144.400465 102.434462) (xy 144.396698 102.442586)
+				(xy 144.388775 102.445677) (xy 144.111008 102.445677) (xy 144.102735 102.44225) (xy 144.09933 102.434689)
+				(xy 144.091022 102.298472) (xy 144.091021 102.298469) (xy 144.091021 102.298464) (xy 144.067075 102.197773)
+				(xy 144.03217 102.055499) (xy 144.033527 102.046648) (xy 144.040745 102.041349) (xy 144.040902 102.041312)
+				(xy 144.247453 101.995245) (xy 144.252547 101.995245)
 			)
 		)
 	)
