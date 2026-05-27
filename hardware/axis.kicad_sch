@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "V2 axis")
-		(date "2026-05-19")
+		(date "2026-05-27")
 		(rev "2026-01-14")
 		(company "Versio Duo")
 		(comment 1 "Orientation Sensor")
@@ -5245,14 +5245,14 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "V2_Production:Layer_Numbers"
+		(symbol "V2_Production:Layer_Numbers-4"
 			(exclude_from_sim no)
 			(in_bom no)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "INFO"
-				(at 0 3.81 0)
+				(at 0 2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -5261,7 +5261,7 @@
 					)
 				)
 			)
-			(property "Value" "Layer_Numbers"
+			(property "Value" "Layer_Numbers-4"
 				(at 0 -3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5272,7 +5272,7 @@
 					)
 				)
 			)
-			(property "Footprint" "V2_Production:Layer_Numbers"
+			(property "Footprint" "V2_Production:Layer_Numbers-4"
 				(at 0 -6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5305,26 +5305,26 @@
 					)
 				)
 			)
-			(symbol "Layer_Numbers_0_0"
-				(text "1 2 3 4"
-					(at 0 0 0)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(symbol "Layer_Numbers_0_1"
+			(symbol "Layer_Numbers-4_0_1"
 				(rectangle
-					(start -5.08 1.27)
-					(end 5.08 -1.27)
+					(start -2.54 1.27)
+					(end 2.54 -1.27)
 					(stroke
 						(width 0)
 						(type default)
 					)
 					(fill
 						(type none)
+					)
+				)
+			)
+			(symbol "Layer_Numbers-4_1_1"
+				(text "1 2"
+					(at 0 0 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
 					)
 				)
 			)
@@ -9652,6 +9652,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
 			)
 		)
@@ -9981,7 +9982,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "0b83b69e-82ba-4508-afe5-55ee4153a1d8")
 		(property "Reference" "#PWR0136"
 			(at 242.57 76.2 0)
@@ -9995,14 +9995,14 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 250.19 76.1999 90)
+			(at 252.984 76.1999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -10447,14 +10447,14 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 265.43 101.5999 90)
+			(at 267.97 101.5999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -11185,6 +11185,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
 			)
 		)
@@ -11392,14 +11393,14 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 276.86 40.6399 0)
+			(at 275.59 40.8939 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
@@ -11457,7 +11458,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3d931ac1-f6a4-41af-9bb4-201685b566d8")
 		(property "Reference" "#PWR0105"
 			(at 58.42 123.19 0)
@@ -11471,14 +11471,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 50.8 123.1899 90)
+			(at 48.26 123.1899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -12535,7 +12535,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "69b3843b-e8b9-4f3c-a182-6bd9b57b7de7")
 		(property "Reference" "#PWR0106"
 			(at 63.5 48.26 0)
@@ -12549,14 +12548,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 55.88 48.2599 90)
+			(at 53.34 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -12999,12 +12998,13 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 59.69 144.78 0)
+			(at 59.69 143.764 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
 			)
 		)
@@ -13156,6 +13156,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
 			)
 		)
@@ -13214,7 +13215,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "819dcccb-fbf4-40dc-88e4-a3496c9ef425")
 		(property "Reference" "#PWR0116"
 			(at 118.11 96.52 0)
@@ -13228,14 +13228,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 110.49 96.5199 90)
+			(at 107.696 96.5199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -13284,7 +13284,7 @@
 		)
 	)
 	(symbol
-		(lib_id "V2_Production:Layer_Numbers")
+		(lib_id "V2_Production:Layer_Numbers-4")
 		(at 176.53 180.34 0)
 		(unit 1)
 		(body_style 1)
@@ -13305,7 +13305,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Layer_Numbers"
+		(property "Value" "Layer_Numbers-4"
 			(at 178.4684 176.8685 0)
 			(hide yes)
 			(show_name no)
@@ -13316,7 +13316,7 @@
 				)
 			)
 		)
-		(property "Footprint" "V2_Production:Layer_Numbers"
+		(property "Footprint" "V2_Production:Layer_Numbers-4"
 			(at 176.53 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -13381,7 +13381,7 @@
 			)
 		)
 		(property "Value" "Shield"
-			(at 253.238 83.82 90)
+			(at 255.778 83.82 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13854,7 +13854,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "9157f7d0-da6b-4f65-8841-6560e9e08fde")
 		(property "Reference" "#PWR0131"
 			(at 195.58 90.17 0)
@@ -13868,14 +13867,14 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 203.2 90.1699 90)
+			(at 205.232 90.1699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -14611,6 +14610,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
 			)
 		)
@@ -15054,12 +15054,13 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 85.09 161.29 0)
+			(at 85.09 160.528 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
 			)
 		)
@@ -15131,12 +15132,13 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 31.75 151.13 0)
+			(at 31.75 150.368 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
 			)
 		)
@@ -16618,12 +16620,13 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 119.38 177.165 90)
+			(at 119.126 177.673 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(color 255 92 187 1)
 				)
 			)
 		)
