@@ -6,7 +6,7 @@
 #include <V2MIDI.h>
 #include <Wire.h>
 
-V2DEVICE_METADATA("com.versioduo.axis", 5, "versioduo:samd:axis");
+V2DEVICE_METADATA("com.versioduo.axis", 6, "versioduo:samd:axis");
 
 static V2LED::WS2812 LED(2, PIN_LED_WS2812, &sercom2, SPI_PAD_0_SCK_1, PIO_SERCOM);
 
@@ -311,9 +311,7 @@ private:
     }
 
     if (config.gyroscope.enabled) {
-      auto center{[](float v) -> uint8_t {
-        return ceilf((std::clamp((v + 1.f) / 2.f, 0.f, 1.f)) * 127.f);
-      }};
+      auto center{[](float v) -> uint8_t { return ceilf((std::clamp((v + 1.f) / 2.f, 0.f, 1.f)) * 127.f); }};
 
       auto g{Sensor.getAcceleration()};
       if (auto x{center(g.x)}; _gyroscope.x != x) {
@@ -336,7 +334,7 @@ private:
   }
 
   auto handleSend(V2MIDI::Packet* midi) -> bool override {
-    usb.midi.send(midi);
+    usb.midi.send(*midi);
     return true;
   }
 
@@ -686,15 +684,15 @@ private:
 static class MIDI {
 public:
   void loop() {
-    if (!Device.usb.midi.receive(&_midi))
+    if (!Device.usb.midi.receive(_midi))
       return;
 
-    if (_midi.getPort() == 0)
+    if (_midi.port == 0)
       Device.dispatch(&Device.usb.midi, &_midi);
   }
 
 private:
-  V2MIDI::Packet _midi{};
+  V2MIDI::Packet _midi;
 } MIDI;
 
 static class Button : public V2Buttons::Button {
