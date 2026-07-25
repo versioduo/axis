@@ -6,7 +6,7 @@
 #include <V2MIDI.h>
 #include <Wire.h>
 
-V2DEVICE_METADATA("com.versioduo.axis", 6, "versioduo:samd:axis");
+V2DEVICE_METADATA("com.versioduo.axis", 7, "versioduo:samd:axis");
 
 static V2LED::WS2812 LED(2, PIN_LED_WS2812, &sercom2, SPI_PAD_0_SCK_1, PIO_SERCOM);
 
@@ -410,29 +410,40 @@ private:
   auto exportSettings(JsonArray json) -> void override {
     {
       JsonObject setting = json.add<JsonObject>();
-      setting["type"]    = "number";
+      setting["type"]    = "title";
       setting["title"]   = "MIDI";
+    }
+    {
+      JsonObject setting = json.add<JsonObject>();
+      setting["type"]    = "number";
       setting["label"]   = "Channel";
       setting["min"]     = 1;
       setting["max"]     = 16;
       setting["input"]   = "select";
       setting["path"]    = "midi/channel";
     }
+
+    {
+      JsonObject setting = json.add<JsonObject>();
+      setting["type"]    = "title";
+      setting["title"]   = "Compass";
+    }
     {
       JsonObject setting{json.add<JsonObject>()};
       setting["type"]  = "toggle";
-      setting["title"] = "Sensor";
-      setting["label"] = "Mode";
-      setting["text"]  = "Compass";
+      setting["label"] = "Enabled";
       setting["path"]  = "compass";
     }
 
     {
+      JsonObject setting = json.add<JsonObject>();
+      setting["type"]    = "title";
+      setting["title"]   = "Euler";
+    }
+    {
       JsonObject setting{json.add<JsonObject>()};
       setting["type"]  = "toggle";
-      setting["ruler"] = true;
-      setting["text"]  = "Euler";
-      setting["label"] = "Messages";
+      setting["label"] = "Enabled";
       setting["path"]  = "euler/enabled";
     }
     {
@@ -461,12 +472,14 @@ private:
     }
 
     {
+      JsonObject setting = json.add<JsonObject>();
+      setting["type"]    = "title";
+      setting["title"]   = "Gyroscope";
+    }
+    {
       JsonObject setting{json.add<JsonObject>()};
       setting["type"]  = "toggle";
-      setting["ruler"] = true;
-      setting["text"]  = "Gyroscope";
-      setting["label"] = "Messages";
-      setting["test"]  = true;
+      setting["label"] = "Enabled";
       setting["path"]  = "gyroscope/enabled";
     }
     {
