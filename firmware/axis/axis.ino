@@ -6,9 +6,9 @@
 #include <V2MIDI.h>
 #include <Wire.h>
 
-V2DEVICE_METADATA("com.versioduo.axis", 7, "versioduo:samd:axis");
+V2DEVICE_METADATA("com.versioduo.axis", 8, "versioduo:samd:axis");
 
-static V2LED::WS2812 LED(2, PIN_LED_WS2812, &sercom2, SPI_PAD_0_SCK_1, PIO_SERCOM);
+static V2LED::WS2812<2> LED(PIN_LED_WS2812, sercom2, SPI_PAD_0_SCK_1, PIO_SERCOM);
 
 static class Sensor : public V2BHY1 {
 public:
@@ -26,15 +26,15 @@ public:
   void updateLED() {
     switch (_setup.state) {
       case State::Init:
-        LED.setHSV(V2Colour::Cyan, 0.9, 0.2);
+        LED.hsv({V2Colour::Cyan, 0.9, 0.2});
         break;
 
       case State::Up:
-        LED.setHSV(V2Colour::Green, 0.9, 0.6);
+        LED.hsv({V2Colour ::Green, 0.9, 0.6});
         break;
 
       case State::Calibrated:
-        LED.setHSV(V2Colour::Orange, 0.9, 0.4);
+        LED.hsv({V2Colour::Orange, 0.9, 0.4});
         break;
     }
   }
@@ -60,7 +60,7 @@ public:
     // calibration values.
     if (auto angle{V23D::radToDeg(_setup.up.angleBetween(zAxis))}; angle < 45.f || angle > 135.f) {
       _setup.state = State::Init;
-      LED.splashHSV(0.3, V2Colour::Red, 1, 0.6);
+      LED.flash({V2Colour::Red, 1, 0.6}, 0.3);
       updateLED();
       return false;
     }
@@ -158,7 +158,7 @@ public:
     system.configure     = "https://versioduo.com/configure";
     usb.ports.standard   = 0;
     configuration        = {.version{2}, .size{sizeof(config)}, .data{&config}};
-    help.device          = "Accelerometer, Gyroscope, Magentometer – MIDI Control Change messages with Quaternion or Euler data.";
+    help.device          = "Accelerometer, Gyroscope, Magnetometer – MIDI Control Change messages with Quaternion or Euler data.";
     help.configuration   = "# Setup\n"
                            "The device can be mounted at any orientation or angle, the reference frame / axes can be aligned to the current "
                            "posion and stored in the device. This sequence identifies the Y axis (the axis of rotation between the button "
@@ -190,7 +190,7 @@ public:
     config.calibration = Sensor.calibration();
 
     writeConfiguration();
-    LED.splashHSV(0.3, V2Colour::Magenta, 0.8, 0.5);
+    LED.flash({V2Colour::Magenta, 0.8, 0.5}, 0.3);
   }
 
   auto silent(bool on = true) {
@@ -246,7 +246,7 @@ private:
     float min{0.05};
     float max{0.75};
     float range{(max - min) * _lightMax};
-    LED.setMaxBrightness(min + range);
+    LED.brightnessMax(min + range);
     Sensor.updateLED();
   }
 
@@ -395,8 +395,11 @@ private:
     JsonObject jsonLink     = json.add<JsonObject>();
     jsonLink["description"] = "Rotating Cube";
 
-    char link[128] = "https://versioduo.com/axis3d?connect=";
-    strlcat(link, usb.name ? usb.name : metadata.product, sizeof(link));
+    std::string link{"https://versioduo.com/sequencer?connect="};
+    if (!usb.name.empty())
+      link.append(usb.name);
+    else
+      link.append(metadata.product);
     jsonLink["target"] = link;
   }
 
