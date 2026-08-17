@@ -6,8 +6,7 @@
 #include <V2MIDI.h>
 #include <Wire.h>
 
-V2DEVICE_METADATA("com.versioduo.axis", 8, "versioduo:samd:axis");
-
+static V2DeviceFirmware(Firmware, "com.versioduo.axis", 8, "versioduo:samd:axis");
 static V2LED::WS2812<2> LED(PIN_LED_WS2812, sercom2, SPI_PAD_0_SCK_1, PIO_SERCOM);
 
 static class Sensor : public V2BHY1 {
@@ -154,6 +153,7 @@ public:
     metadata.product     = "V2 axis";
     metadata.description = "Orientation Sensor";
     metadata.home        = "https://versioduo.com/#axis";
+    metadata.firmware    = &Firmware;
     system.download      = "https://versioduo.com/download";
     system.configure     = "https://versioduo.com/configure";
     usb.ports.standard   = 0;
