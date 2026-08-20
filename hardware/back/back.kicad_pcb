@@ -1,9 +1,9 @@
 (kicad_pcb
-	(version 20241229)
+	(version 20260206)
 	(generator "pcbnew")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(general
-		(thickness 2.09)
+		(thickness 2)
 		(legacy_teardrops no)
 	)
 	(paper "A4")
@@ -43,11 +43,11 @@
 			)
 			(layer "F.Mask"
 				(type "Top Solder Mask")
-				(thickness 0.01)
+				(thickness 0)
 			)
 			(layer "F.Cu"
 				(type "copper")
-				(thickness 0.035)
+				(thickness 0)
 			)
 			(layer "dielectric 1"
 				(type "core")
@@ -58,11 +58,11 @@
 			)
 			(layer "B.Cu"
 				(type "copper")
-				(thickness 0.035)
+				(thickness 0)
 			)
 			(layer "B.Mask"
 				(type "Bottom Solder Mask")
-				(thickness 0.01)
+				(thickness 0)
 			)
 			(layer "B.Paste"
 				(type "Bottom Solder Paste")
@@ -75,7 +75,20 @@
 		)
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
-		(tenting front back)
+		(tenting
+			(front yes)
+			(back yes)
+		)
+		(covering
+			(front no)
+			(back no)
+		)
+		(plugging
+			(front no)
+			(back no)
+		)
+		(capping no)
+		(filling no)
 		(grid_origin 60 125)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
@@ -85,15 +98,12 @@
 			(usegerberattributes yes)
 			(usegerberadvancedattributes yes)
 			(creategerberjobfile yes)
-			(dashed_line_dash_ratio 12.000000)
-			(dashed_line_gap_ratio 3.000000)
+			(dashed_line_dash_ratio 12)
+			(dashed_line_gap_ratio 3)
 			(svgprecision 4)
 			(plotframeref no)
 			(mode 1)
 			(useauxorigin no)
-			(hpglpennumber 1)
-			(hpglpenspeed 20)
-			(hpglpendiameter 15.000000)
 			(pdf_front_fp_property_popups yes)
 			(pdf_back_fp_property_popups yes)
 			(pdf_metadata yes)
@@ -117,7 +127,16 @@
 			(outputdirectory "")
 		)
 	)
-	(net 0 "")
+	(gr_line
+		(start 60 108.5)
+		(end 60 124)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "60451be2-811d-4c91-810e-a3b4ea80404b")
+	)
 	(gr_arc
 		(start 60 108.5)
 		(mid 60.292893 107.792893)
@@ -130,24 +149,46 @@
 		(uuid "0e923ddd-8810-4985-b5aa-f0d9adcee65f")
 	)
 	(gr_line
-		(start 60 108.5)
+		(start 61 107.5)
+		(end 121.25 107.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "689d1754-c29e-4aac-a36f-85fcccd58e91")
+	)
+	(gr_arc
+		(start 61 125)
+		(mid 60.292893 124.707107)
 		(end 60 124)
 		(stroke
 			(width 0.05)
 			(type solid)
 		)
 		(layer "Edge.Cuts")
-		(uuid "2c327488-c137-4b41-aa55-3463ee2374a0")
+		(uuid "a3bcf4d4-2b02-4e07-92ea-d9063b50f65b")
 	)
 	(gr_line
 		(start 61 125)
-		(end 125 125)
+		(end 121.25 125)
 		(stroke
 			(width 0.05)
 			(type solid)
 		)
 		(layer "Edge.Cuts")
-		(uuid "4644050c-891f-4104-ade6-cf57299e76a6")
+		(uuid "2a11e47b-3162-4db9-a06f-55466dc5a3b3")
+	)
+	(gr_circle
+		(center 74 116.25)
+		(end 74.75 116.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "c2d50b0b-42a1-4f07-9c47-fc6792076794")
 	)
 	(gr_circle
 		(center 112 116.25)
@@ -161,68 +202,15 @@
 		(uuid "58fb2873-6135-4132-a926-59dcc00c362a")
 	)
 	(gr_arc
-		(start 125 107.5)
-		(mid 125.707107 107.792893)
-		(end 126 108.5)
+		(start 121.25 107.5)
+		(mid 130 116.25)
+		(end 121.25 125)
 		(stroke
 			(width 0.05)
 			(type solid)
 		)
 		(layer "Edge.Cuts")
-		(uuid "846c5c85-1783-47f7-808c-a802fdc03168")
-	)
-	(gr_arc
-		(start 126 124)
-		(mid 125.707107 124.707107)
-		(end 125 125)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "Edge.Cuts")
-		(uuid "885d5671-aae0-4243-9972-e136f552e210")
-	)
-	(gr_line
-		(start 61 107.5)
-		(end 125 107.5)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "Edge.Cuts")
-		(uuid "8dba3796-648d-4463-81ed-a3be5e66e8b7")
-	)
-	(gr_line
-		(start 126 108.5)
-		(end 126 124)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "Edge.Cuts")
-		(uuid "939f916d-5a6d-42b5-aded-9412780871f8")
-	)
-	(gr_arc
-		(start 61 125)
-		(mid 60.292893 124.707107)
-		(end 60 124)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "Edge.Cuts")
-		(uuid "a3bcf4d4-2b02-4e07-92ea-d9063b50f65b")
-	)
-	(gr_circle
-		(center 74 116.25)
-		(end 74.75 116.25)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(fill no)
-		(layer "Edge.Cuts")
-		(uuid "c2d50b0b-42a1-4f07-9c47-fc6792076794")
+		(uuid "08e6fb45-8140-4d49-9395-b1c837eca28c")
 	)
 	(embedded_fonts no)
 )

@@ -266,7 +266,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "2026-01-14"
+      "sch_revision": "2026-08-20"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -658,7 +658,7 @@
       "plot": "axis-gerber",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../../../../Desktop/axis.step",
       "svg": "",
       "vrml": ""
     },
@@ -842,7 +842,7 @@
         "uuid": "6c8448b4-b04d-47e1-934e-e40cbe27a7be"
       }
     ],
-    "used_designators": "",
+    "used_designators": "J101-102,FID101-103,H101-102,SWB101,R101-108,Y101,#PWR101-143,D101-103,U101-104,C101-112,SW101-102,ICON101-102,ESD101,INFO101-102,#FLG101-103",
     "variants": []
   },
   "sheets": [

@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "V2 axis")
-		(date "2026-05-27")
-		(rev "2026-01-14")
+		(date "2026-08-20")
+		(rev "2026-08-20")
 		(company "Versio Duo")
 		(comment 1 "Orientation Sensor")
 	)
@@ -10874,7 +10874,7 @@
 		(at 234.95 152.4 90)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
@@ -10925,6 +10925,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 234.95 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Enable" "0"
 			(at 234.95 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -17863,7 +17874,7 @@
 		(at 176.53 165.1 0)
 		(unit 1)
 		(body_style 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
@@ -17915,6 +17926,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 176.53 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Enable" "0"
 			(at 176.53 165.1 0)
 			(hide yes)
 			(show_name no)
